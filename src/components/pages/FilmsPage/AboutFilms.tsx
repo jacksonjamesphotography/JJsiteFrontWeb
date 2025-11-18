@@ -40,7 +40,7 @@ export default function AboutFilms() {
               At Jackson James Photography, we transform your wedding moments
               into cinematic experiences. Our team captures every emotion, every
               glance, and every celebration with the artistry of filmmaking,
-              ensuring your love story becomes a timeless masterpiece you'll
+              ensuring your love story becomes a timeless masterpiece you&apos;ll
               treasure forever.
             </p>
 

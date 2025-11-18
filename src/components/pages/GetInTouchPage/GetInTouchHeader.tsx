@@ -82,7 +82,7 @@ export default function GetInTouchHeader() {
                 }}
               >
                 Every story deserves to be <br />
-                told beautifully, let's create <br />
+                told beautifully, let&apos;s create <br />
                 <span
                   className="text-[40px] sm:text-[50px] md:text-[58px] lg:text-[65px]"
                   style={{

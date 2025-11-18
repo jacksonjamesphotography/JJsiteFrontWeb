@@ -37,11 +37,11 @@ function AboutJackson() {
           className="text-xs md:text-sm text-gray-900 leading-loose mb-8 max-w-xl text-justify tracking-wide"
           style={{ fontFamily: "var(--font-family-body)" }}
         >
-          We're a team of heart winning storytellers. <br /> We're
+          We&apos;re a team of heart winning storytellers. <br /> We&apos;re
           smile-searchers, light-catchers, love- <br />
-          whisperers, story-spinners, colour-painters. <br /> And we can't wait
+          whisperers, story-spinners, colour-painters. <br /> And we can&apos;t wait
           to hear your story. In the <br />
-          meantime here's ours.
+          meantime here&apos;s ours.
         </p>
 
         {/* About us button */}

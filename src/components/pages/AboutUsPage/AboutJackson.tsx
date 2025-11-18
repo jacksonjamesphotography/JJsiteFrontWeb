@@ -57,7 +57,7 @@ function AboutJackson() {
               {/* Column 1 */}
               <div className="space-y-3 sm:space-y-4">
                 <p style={{ textAlign: "justify" }}>
-                  Hello, I'm Jackson James. We are a premium wedding photography
+                  Hello, I&apos;m Jackson James. We are a premium wedding photography
                   and cinematography company specializing in visually stunning
                   and emotionally rich narratives that capture the essence of
                   your celebration.
@@ -66,7 +66,7 @@ function AboutJackson() {
                   With our handpicked team of skilled photographers,
                   cinematographers, and editors, we capture authentic moments
                   with artistic flair—delivering high-quality photos and 4K
-                  cinematic films that reflect each couple's unique story. Every
+                  cinematic films that reflect each couple&apos;s unique story. Every
                   frame is crafted with care and attention to detail.
                 </p>
                 <p style={{ textAlign: "justify" }}>
@@ -85,7 +85,7 @@ function AboutJackson() {
                   creativity.
                 </p>
                 <p style={{ textAlign: "justify" }}>
-                  Built on consistent quality and personal attention, we've
+                  Built on consistent quality and personal attention, we&apos;ve
                   grown through word-of-mouth referrals—expanding to
                   international weddings, opening our Kochi office, and building
                   a robust post-production team that delivers exceptional

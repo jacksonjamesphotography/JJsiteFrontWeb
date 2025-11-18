@@ -31,7 +31,7 @@ function OurCommunity() {
           style={{ fontFamily: "var(--font-family-body)" }}
         >
           At Jackson James Photography, we believe that storytelling through
-          visuals is more than just a service—it's a way to preserve culture,
+          visuals is more than just a service—it&apos;s a way to preserve culture,
           emotion, and legacy. By documenting weddings, we help families across
           generations relive the most important moments of their lives.
           <br />
@@ -43,7 +43,7 @@ function OurCommunity() {
           freelancers—contributing to the creative economy.
           <br />
           <br />
-          In addition, we've occasionally offered our services at minimal or no
+          In addition, we&apos;ve occasionally offered our services at minimal or no
           cost for special community-driven events and intimate weddings that
           carry emotional or social significance. Through all this, our goal is
           to use our craft not only to celebrate love but to uplift people and

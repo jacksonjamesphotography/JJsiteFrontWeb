@@ -47,7 +47,7 @@ function FooterSection() {
               color: "#FFFFFFFF",
             }}
           >
-            Reach out to us now and let's start planning together!
+            Reach out to us now and let&apos;s start planning together!
           </p>
 
           {/* CTA Button with Arrow */}
@@ -119,9 +119,9 @@ function FooterSection() {
               color: "#FFFFFFFF",
             }}
           >
-            Documenting the moments you'll cherish forever, because let's{" "}
+            Documenting the moments you&apos;ll cherish forever, because let&apos;s{" "}
             <br className="hidden md:block" />
-            face it, you'll need proof for the 'remember when' debates!
+            face it, you&apos;ll need proof for the &apos;remember when&apos; debates!
           </h3>
 
           {/* Mobile/Tablet Layout */}
