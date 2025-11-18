@@ -18,10 +18,13 @@ export const metadata: Metadata = {
   description: "Capturing moments that last a lifetime",
   icons: {
     icon: [
-      { url: "/icons/iconLogo.png", type: "image/png" },
+      { url: "/icons/iconLogo.png", type: "image/png", sizes: "any" },
+      { rel: "icon", url: "/icons/iconLogo.png", type: "image/png" },
       { rel: "shortcut icon", url: "/icons/iconLogo.png", type: "image/png" },
     ],
-    apple: [{ url: "/icons/iconLogo.png", type: "image/png" }],
+    apple: [
+      { url: "/icons/iconLogo.png", type: "image/png", sizes: "180x180" },
+    ],
   },
 };
 
