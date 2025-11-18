@@ -196,7 +196,7 @@ export const OUR_BELIEFS_ITEMS = [
       "Instead of staged moments, we guide you into meaningful interactions that let your chemistry shine. The result: imagery filled with warmth, movement, and the kind of intimacy you can feel decades later.",
   },
   {
-    image: "/images/OurBeliefsImages/OurBelief4.jpeg",
+    image: "/images/OurBeliefsImages/OurBelief4.jpg",
     titleLines: [
       { text: "Legacy worth", isScript: false },
       { text: "sharing forevermore", isScript: true },
