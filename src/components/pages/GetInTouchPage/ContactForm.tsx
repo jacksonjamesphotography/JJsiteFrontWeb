@@ -194,7 +194,7 @@ export default function ContactForm() {
           }}
         >
           We&apos;d love to hear about your special day and help capture your
-          beautiful moments. Please fill out the form below, and we'll get back
+          beautiful moments. Please fill out the form below, and we&apos;ll get back
           to you as soon as possible.
         </p>
 
@@ -644,14 +644,14 @@ export default function ContactForm() {
                   color: "#2E2E2E",
                 }}
               >
-                "Your story is now{" "}
+                &quot;Your story is now{" "}
                 <span
                   style={{ fontFamily: "var(--font-family-script)" }}
                   className="normal-case"
                 >
                   ours to tell
                 </span>
-                "
+                &quot;
               </p>
               <p
                 className="text-xs md:text-sm tracking-wide"
@@ -662,7 +662,7 @@ export default function ContactForm() {
                   letterSpacing: "0.1em",
                 }}
               >
-                Thank you for reaching out. We'll be in touch soon.
+                Thank you for reaching out. We&apos;ll be in touch soon.
               </p>
             </div>
           )}
@@ -681,14 +681,14 @@ export default function ContactForm() {
                   color: "#2E2E2E",
                 }}
               >
-                "Sometimes the best{" "}
+                &quot;Sometimes the best{" "}
                 <span
                   style={{ fontFamily: "var(--font-family-script)" }}
                   className="normal-case"
                 >
                   stories
                 </span>{" "}
-                need a second try"
+                need a second try&quot;
               </p>
               <p
                 className="text-xs md:text-sm tracking-wide"
