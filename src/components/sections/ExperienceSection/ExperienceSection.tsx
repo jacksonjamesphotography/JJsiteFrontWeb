@@ -25,10 +25,14 @@ function ExperienceSection() {
           <div className="lg:col-span-4 space-y-8 text-center overflow-visible">
             <div className="flex justify-center">
               <p
-                className="text-xs md:text-sm uppercase tracking-wider font-extralight text-gray-600 whitespace-nowrap"
+                className="text-xs md:text-sm uppercase tracking-wider font-extralight text-gray-600"
                 style={{ fontFamily: "var(--font-family-body)" }}
               >
-                Experience Real Emotions, Real Moments, Real Weddings
+                <span className="md:whitespace-nowrap">
+                  Experience Real Emotions, Real Moments,
+                </span>
+                <br className="md:hidden" />
+                <span> Real Weddings</span>
               </p>
             </div>
 

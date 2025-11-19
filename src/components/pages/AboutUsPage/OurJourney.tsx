@@ -46,7 +46,7 @@ function OurJourney() {
           {/* Right Column: Text */}
           <div className="flex-1 w-full max-w-4xl px-6 sm:px-8 md:px-10 lg:px-0 lg:mt-32">
             <p
-              className="text-[10px] sm:text-xs md:text-sm uppercase tracking-widest font-light mb-1 mt-3"
+              className="text-[10px] sm:text-xs md:text-sm uppercase tracking-widest font-light mb-1 mt-3 text-center md:text-left max-w-[300px] sm:max-w-[340px] md:max-w-none mx-auto md:mx-0"
               style={{
                 fontFamily: "var(--font-family-body)",
                 color: "#f2eae2",

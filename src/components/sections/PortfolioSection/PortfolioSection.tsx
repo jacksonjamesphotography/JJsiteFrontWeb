@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useRef } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { PORTFOLIO_IMAGES } from "@/lib/constants";
@@ -136,12 +137,13 @@ function PortfolioSection() {
           </div>
 
           {/* Right - Button */}
-          <button
-            className="px-4 md:px-8 py-2 md:py-3 border-2 border-gray-600 text-gray-600 hover:bg-gray-800 hover:text-white hover:border-gray-800 transition-all duration-300 font-light uppercase tracking-wider text-xs self-start md:self-auto md:mr-7"
+          <Link
+            href="/stories"
+            className="px-4 md:px-8 py-2 md:py-3 border-2 border-gray-600 text-gray-600 hover:bg-gray-800 hover:text-white hover:border-gray-800 transition-all duration-300 font-light uppercase tracking-wider text-xs self-start md:self-auto md:mr-7 inline-block"
             style={{ fontFamily: "var(--font-family-body)" }}
           >
-            View Blog
-          </button>
+            View Portfolio
+          </Link>
         </div>
       </div>
     </section>

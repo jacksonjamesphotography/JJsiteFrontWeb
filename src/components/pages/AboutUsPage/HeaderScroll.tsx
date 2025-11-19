@@ -46,7 +46,7 @@ function HeaderScroll() {
       };
 
       // Scroll to next image every 3 seconds (2 seconds display + 1 second scroll)
-      autoScrollIntervalRef.current = setInterval(scrollToImage, 3000);
+      autoScrollIntervalRef.current = setInterval(scrollToImage, 7000);
     }
 
     return () => {

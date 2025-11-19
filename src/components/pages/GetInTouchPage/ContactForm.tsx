@@ -194,8 +194,8 @@ export default function ContactForm() {
           }}
         >
           We&apos;d love to hear about your special day and help capture your
-          beautiful moments. Please fill out the form below, and we&apos;ll get back
-          to you as soon as possible.
+          beautiful moments. Please fill out the form below, and we&apos;ll get
+          back to you as soon as possible.
         </p>
 
         {/* Form */}
@@ -490,6 +490,9 @@ export default function ContactForm() {
                 fontFamily: "var(--font-family-body)",
                 backgroundColor: "#fff",
                 border: "1px solid #c2c5aa",
+                boxSizing: "border-box",
+                width: "100%",
+                maxWidth: "100%",
               }}
             />
           </div>

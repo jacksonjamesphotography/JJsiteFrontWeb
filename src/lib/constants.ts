@@ -1,10 +1,10 @@
 // Navigation Links
 export const NAV_LINKS = [
   { name: "Home", href: "/" },
-  { name: "About Me", href: "/about" },
+  { name: "About Us", href: "/about" },
   { name: "Stories", href: "/stories" },
   { name: "Films", href: "/films" },
-  { name: "Blogs", href: "/blog" },
+  // { name: "Blogs", href: "/blog" },
   { name: "Get in Touch", href: "/get-in-touch" },
 ] as const;
 
@@ -15,7 +15,7 @@ export const ROUTES = {
   STORIES: "/stories",
   FILMS: "/films",
   CONTACT: "/get-in-touch",
-  BLOG: "/blog",
+  // BLOG: "/blog",
 } as const;
 
 export const footerLinks = [
@@ -23,7 +23,7 @@ export const footerLinks = [
   { name: "ABOUT", href: ROUTES.ABOUT },
   { name: "STORIES", href: ROUTES.STORIES },
   { name: "FILMS", href: ROUTES.FILMS },
-  { name: "BLOGS", href: ROUTES.BLOG },
+  // { name: "BLOGS", href: ROUTES.BLOG },
   { name: "GET IN TOUCH", href: ROUTES.CONTACT },
 ];
 

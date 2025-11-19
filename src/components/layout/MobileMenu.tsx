@@ -25,9 +25,10 @@ function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
   if (!isOpen) return null;
 
-  // Split nav links into two columns (3 each)
-  const leftLinks = NAV_LINKS.slice(0, 3);
-  const rightLinks = NAV_LINKS.slice(3, 6);
+  // Split nav links: first 4 links into two columns (2 each), last one separate
+  const leftLinks = NAV_LINKS.slice(0, 2);
+  const rightLinks = NAV_LINKS.slice(2, 4);
+  const contactLink = NAV_LINKS[4]; // "Get in Touch"
 
   return (
     <>
@@ -80,7 +81,7 @@ function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             <div className="w-full max-w-md h-[1px] bg-[#68655a]/30 mb-10"></div>
 
             {/* Navigation Links - Two Columns */}
-            <div className="w-full max-w-md mb-10 relative">
+            <div className="w-full max-w-md mb-6 relative">
               {/* Vertical Divider */}
               <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-[#68655a]/30 -translate-x-1/2"></div>
 
@@ -130,6 +131,24 @@ function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                 </div>
               </div>
             </div>
+
+            {/* Get in Touch - Third Row, Centered and Larger */}
+            {contactLink && (
+              <div className="w-full max-w-md mb-10 flex justify-center">
+                <Link
+                  href={contactLink.href}
+                  onClick={onClose}
+                  className={`text-center uppercase tracking-wider transition-colors duration-300 text-lg ${
+                    pathname === contactLink.href
+                      ? "text-[#68655a]"
+                      : "text-[#68655a]/70 hover:text-[#68655a]"
+                  }`}
+                  style={{ fontFamily: "var(--font-family-body)" }}
+                >
+                  {contactLink.name}
+                </Link>
+              </div>
+            )}
 
             {/* Horizontal Line */}
             <div className="w-full max-w-md h-[1px] bg-[#68655a]/30"></div>

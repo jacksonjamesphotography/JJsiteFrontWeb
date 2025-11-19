@@ -173,7 +173,7 @@ function StoriesHeader() {
             className="text-right uppercase leading-tight text-[32px] sm:text-[48px] md:text-[64px] lg:text-[80px] xl:text-[90px]"
             style={{
               fontFamily: "var(--font-family-heading)",
-              color: "#1a1a1a",
+              color: "#2E2A22FF",
               fontWeight: "400",
             }}
           >

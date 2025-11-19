@@ -12,6 +12,10 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // Pages where we don't want blur effect
+  const pagesWithoutBlur = ["/about", "/films", "/stories"];
+  const shouldDisableBlur = pagesWithoutBlur.includes(pathname);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -38,7 +42,9 @@ export default function Navbar() {
         className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ease-in-out ${
           isScrolled
             ? "bg-[#f9f6f5] shadow-md border-b border-[#f9f6f5]"
-            : "bg-transparent backdrop-blur-[2px] border-b border-white/10"
+            : shouldDisableBlur
+              ? "bg-transparent border-b border-white/10"
+              : "bg-transparent backdrop-blur-[2px] border-b border-white/10"
         }`}
       >
         <div className="max-w-6xl mx-auto px-6 py-2 md:py-3">

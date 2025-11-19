@@ -43,8 +43,8 @@ function OurMission() {
               <Image
                 src="/images/logo/logoblack.png?v=2"
                 alt="Jackson Logo"
-                width={135}
-                height={135}
+                width={145}
+                height={145}
                 className="object-contain"
                 unoptimized
               />
@@ -63,9 +63,13 @@ function OurMission() {
                 className="text-sm md:text-sm text-gray-700 leading-relaxed"
                 style={{ fontFamily: "var(--font-family-body)" }}
               >
-                When we hold up our cameras we zoom out of these ,<br />{" "}
-                constructs and focus in on the true emotions, hidden <br />{" "}
-                smiles, bright colours, and the true love you share.
+                When we hold up our cameras we zoom out of these{" "}
+                <br className="hidden md:block" />
+                constructs and focus in on the true emotions, hidden{" "}
+                <br className="hidden md:block" />
+                smiles, bright colours, and the true love you share{" "}
+                <br className="hidden md:block" />
+                and all that is beautiful. <br className="hidden md:block" />
               </p>
             </div>
           </div>
