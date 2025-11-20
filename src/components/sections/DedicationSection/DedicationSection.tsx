@@ -77,7 +77,7 @@ function DedicationSection() {
                   letterSpacing: "0.2em",
                 }}
               >
-                VIEW STORIES
+                VIEW PORTFOLIO
               </a>
             </div>
           </div>
