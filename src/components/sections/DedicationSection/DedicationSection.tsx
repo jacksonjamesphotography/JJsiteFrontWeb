@@ -70,14 +70,14 @@ function DedicationSection() {
             {/* Get In Touch Button */}
             <div className="pt-2 sm:pt-3 md:pt-4 flex justify-center lg:justify-start">
               <a
-                href={ROUTES.CONTACT}
+                href={ROUTES.STORIES}
                 className="inline-block px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 text-[10px] sm:text-[11px] md:text-xs font-thin tracking-widest uppercase transition-all duration-300 text-[#181716] border border-[#181716] hover:bg-black hover:text-white"
                 style={{
                   fontFamily: "var(--font-family-body)",
                   letterSpacing: "0.2em",
                 }}
               >
-                Get In Touch
+                VIEW STORIES
               </a>
             </div>
           </div>

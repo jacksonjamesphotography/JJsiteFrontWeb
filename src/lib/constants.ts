@@ -20,7 +20,7 @@ export const ROUTES = {
 
 export const footerLinks = [
   { name: "HOME", href: ROUTES.HOME },
-  { name: "ABOUT", href: ROUTES.ABOUT },
+  { name: "ABOUT US", href: ROUTES.ABOUT },
   { name: "STORIES", href: ROUTES.STORIES },
   { name: "FILMS", href: ROUTES.FILMS },
   // { name: "BLOGS", href: ROUTES.BLOG },
