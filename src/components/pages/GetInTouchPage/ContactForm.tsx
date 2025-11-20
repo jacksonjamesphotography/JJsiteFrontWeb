@@ -466,7 +466,7 @@ export default function ContactForm() {
           </div>
 
           {/* Date of the Main Event */}
-          <div>
+          <div className="w-full overflow-hidden">
             <label
               htmlFor="eventDate"
               className="block text-sm mb-2"
@@ -491,6 +491,7 @@ export default function ContactForm() {
                 backgroundColor: "#fff",
                 border: "1px solid #c2c5aa",
                 boxSizing: "border-box",
+                minWidth: "0",
                 width: "100%",
                 maxWidth: "100%",
               }}
