@@ -12,6 +12,26 @@ const nextConfig: NextConfig = {
   compiler: {
     styledComponents: true,
   },
+  webpack: (config, { isServer }) => {
+    // Exclude Sanity from server-side bundle to prevent SSR issues
+    if (isServer) {
+      config.externals = config.externals || [];
+      if (Array.isArray(config.externals)) {
+        config.externals.push("sanity");
+        config.externals.push("@sanity/ui");
+        config.externals.push("@sanity/vision");
+      } else {
+        config.externals = [
+          ...(config.externals || []),
+          "sanity",
+          "@sanity/ui",
+          "@sanity/vision",
+        ];
+      }
+    }
+
+    return config;
+  },
   images: {
     remotePatterns: [
       {
