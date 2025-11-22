@@ -2,16 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import {
-  STORIES_COUPLES,
-  STORIES_COUPLE_IMAGE_EXTENSIONS,
-} from "@/lib/constants";
-
-// Helper function to get image path
-function getImagePath(coupleName: string): string {
-  const extension = STORIES_COUPLE_IMAGE_EXTENSIONS[coupleName] || ".jpeg";
-  return `/images/StoriesThumbnail/${coupleName}${extension}`;
-}
+import { Story } from "@/lib/sanity/queries";
+import { urlFor } from "@/lib/sanity.image";
 
 // Helper function to format couple name for display
 function formatCoupleName(coupleName: string): string {
@@ -28,21 +20,15 @@ function formatCoupleName(coupleName: string): string {
   return formatted;
 }
 
-// Helper function to create slug from couple name
-function createSlug(coupleName: string): string {
-  return coupleName
-    .toLowerCase()
-    .replace(/and([a-z])/g, "-and-$1") // Handle "and" in names
-    .replace(/&/g, "-")
-    .replace(/[()]/g, "")
-    .replace(/\s+/g, "-");
+interface StoriesPageMainProps {
+  stories: Story[];
 }
 
-function StoriesPageMain() {
+function StoriesPageMain({ stories }: StoriesPageMainProps) {
   // Group couples into pairs (2 per row)
-  const couplePairs: string[][] = [];
-  for (let i = 0; i < STORIES_COUPLES.length; i += 2) {
-    couplePairs.push(STORIES_COUPLES.slice(i, i + 2));
+  const storyPairs: Story[][] = [];
+  for (let i = 0; i < stories.length; i += 2) {
+    storyPairs.push(stories.slice(i, i + 2));
   }
 
   return (
@@ -77,30 +63,35 @@ function StoriesPageMain() {
         {/* Couple Gallery Grid */}
       </div>
       <div className="w-full">
-        {couplePairs.map((pair, pairIndex) => (
+        {storyPairs.map((pair, pairIndex) => (
           <div
             key={pairIndex}
             className={`flex flex-col md:flex-row w-full gap-[1mm] ${
-              pairIndex < couplePairs.length - 1 ? "mb-[1mm]" : ""
+              pairIndex < storyPairs.length - 1 ? "mb-[1mm]" : ""
             }`}
           >
-            {pair.map((coupleName, index) => {
-              const imagePath = getImagePath(coupleName);
-              const displayName = formatCoupleName(coupleName);
-              const slug = createSlug(coupleName);
+            {pair.map((story) => {
+              const displayName = formatCoupleName(story.coupleName);
+              const slug = story.slug.current;
+              const imageUrl = urlFor(story.thumbnail)
+                .width(1600)
+                .height(1200)
+                .quality(90)
+                .url();
 
               return (
                 <Link
-                  key={coupleName}
+                  key={story._id}
                   href={`/stories/${slug}`}
                   className="relative w-full md:flex-1 h-[50vh] sm:h-[55vh] md:h-[60vh] lg:h-[65vh] xl:h-[70vh] group overflow-hidden"
                 >
                   <Image
-                    src={imagePath}
+                    src={imageUrl}
                     alt={displayName}
                     fill
                     className="object-cover"
                     sizes="50vw"
+                    quality={90}
                   />
 
                   {/* Hover Overlay - Light overlay on hover */}

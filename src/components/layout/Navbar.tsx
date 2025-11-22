@@ -15,6 +15,9 @@ export default function Navbar() {
   // Pages where we don't want blur effect
   const pagesWithoutBlur = ["/about", "/films", "/stories"];
   const shouldDisableBlur = pagesWithoutBlur.includes(pathname);
+  
+  // Story gallery pages (individual story pages) should have solid background
+  const isStoryGalleryPage = pathname?.startsWith("/stories/") && pathname !== "/stories";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,7 +43,7 @@ export default function Navbar() {
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ease-in-out ${
-          isScrolled
+          isScrolled || isStoryGalleryPage
             ? "bg-[#f9f6f5] shadow-md border-b border-[#f9f6f5]"
             : shouldDisableBlur
               ? "bg-transparent border-b border-white/10"
@@ -62,7 +65,7 @@ export default function Navbar() {
                 alt="Logo"
                 fill
                 className={`object-contain transition-opacity duration-500 ease-in-out ${
-                  isScrolled ? "opacity-0" : "opacity-100"
+                  isScrolled || isStoryGalleryPage ? "opacity-0" : "opacity-100"
                 }`}
               />
               {/* Black Logo */}
@@ -71,7 +74,7 @@ export default function Navbar() {
                 alt="Logo"
                 fill
                 className={`object-contain transition-opacity duration-500 ease-in-out ${
-                  isScrolled ? "opacity-100" : "opacity-0"
+                  isScrolled || isStoryGalleryPage ? "opacity-100" : "opacity-0"
                 }`}
               />
             </Link>
@@ -86,7 +89,7 @@ export default function Navbar() {
                     key={link.name}
                     href={link.href}
                     className={`font-heading font-light text-sm uppercase tracking-wider transition-all duration-500 ease-in-out relative group ${
-                      isScrolled
+                      isScrolled || isStoryGalleryPage
                         ? isActive
                           ? "text-[#2E2E2E]"
                           : "text-[#2E2E2E]/70 hover:text-[#2E2E2E]"
@@ -98,7 +101,7 @@ export default function Navbar() {
                     {link.name}
                     <span
                       className={`absolute left-0 -bottom-1 w-full h-[1px] transform origin-left transition-all duration-500 ease-in-out ${
-                        isScrolled ? "bg-[#2E2E2E]" : "bg-white"
+                        isScrolled || isStoryGalleryPage ? "bg-[#2E2E2E]" : "bg-white"
                       } ${
                         isActive
                           ? "scale-x-100"
@@ -110,10 +113,10 @@ export default function Navbar() {
               })}
             </div>
 
-            {/* Extreme Right End - Social Links (Visible on Scroll) */}
+            {/* Extreme Right End - Social Links (Visible on Scroll or Story Gallery Pages) */}
             <div
               className={`hidden md:flex items-center ml-6 transition-all duration-500 ease-in-out ${
-                isScrolled
+                isScrolled || isStoryGalleryPage
                   ? "opacity-100 translate-x-0"
                   : "opacity-0 translate-x-4 pointer-events-none"
               }`}
@@ -148,7 +151,7 @@ export default function Navbar() {
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={`md:hidden ml-auto transition-colors duration-500 ease-in-out ${
-                isScrolled
+                isScrolled || isStoryGalleryPage
                   ? "text-[#2E2E2E] hover:text-[#2E2E2E]/70"
                   : "text-white hover:text-white/70"
               }`}

@@ -1,9 +1,38 @@
 "use client";
 
 import { useEffect } from "react";
-import { YOUTUBE_VIDEOS } from "@/lib/constants";
+import { Film } from "@/lib/sanity/queries";
 
-function YoutubeVideos() {
+interface YoutubeVideosProps {
+  films: Film[];
+}
+
+// Helper function to extract YouTube video ID from URL
+function extractYouTubeVideoId(url: string): string | null {
+  if (!url) return null;
+
+  const patterns = [
+    /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/,
+    /youtube\.com\/watch\?.*v=([^&\n?#]+)/,
+  ];
+
+  for (const pattern of patterns) {
+    const match = url.match(pattern);
+    if (match && match[1]) {
+      return match[1];
+    }
+  }
+
+  return null;
+}
+
+// Helper function to extract start time from YouTube URL (if present)
+function extractStartTime(url: string): number {
+  const match = url.match(/[?&]t=(\d+)/);
+  return match ? parseInt(match[1], 10) : 0;
+}
+
+function YoutubeVideos({ films }: YoutubeVideosProps) {
   // Preconnect to YouTube domains for faster loading
   useEffect(() => {
     const preconnectLinks = [
@@ -25,9 +54,54 @@ function YoutubeVideos() {
       }
     });
   }, []);
+
   const getEmbedUrl = (videoId: string, startTime: number) => {
-    return `https://www.youtube.com/embed/${videoId}?start=${startTime}&rel=0&modestbranding=1&autoplay=0&controls=1&showinfo=0`;
+    // vq=high suggests high quality (720p/1080p if available)
+    // YouTube will still auto-adjust based on connection, but will prefer higher quality
+    return `https://www.youtube.com/embed/${videoId}?start=${startTime}&rel=0&modestbranding=1&autoplay=0&controls=1&showinfo=0&vq=hd1080`;
   };
+
+  // Flatten films into videos array (one video per film, using first video if multiple exist)
+  const videos = films
+    .map((film) => {
+      if (!film.videos || film.videos.length === 0) return null;
+
+      const videoUrl = film.videos[0].url;
+      const videoId = extractYouTubeVideoId(videoUrl);
+
+      if (!videoId) return null;
+
+      return {
+        id: film._id,
+        videoId,
+        startTime: extractStartTime(videoUrl),
+        coupleName: film.coupleName,
+      };
+    })
+    .filter((video) => video !== null) as Array<{
+    id: string;
+    videoId: string;
+    startTime: number;
+    coupleName: string;
+  }>;
+
+  if (videos.length === 0) {
+    return (
+      <section
+        className="w-full py-12 sm:py-16 md:py-20 lg:py-24"
+        style={{ backgroundColor: "#ede6e0" }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p
+            className="text-center text-gray-600"
+            style={{ fontFamily: "var(--font-family-body)" }}
+          >
+            No videos available.
+          </p>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section
@@ -35,7 +109,7 @@ function YoutubeVideos() {
       style={{ backgroundColor: "#ede6e0" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {YOUTUBE_VIDEOS.map((video, index) => {
+        {videos.map((video, index) => {
           const isEven = index % 2 === 0;
           const isVideoLeft = isEven;
 
