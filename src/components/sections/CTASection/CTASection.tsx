@@ -41,7 +41,7 @@ function CTASection() {
                 className="text-gray-900 text-xs md:text-sm uppercase tracking-wider mb-4 md:mb-6"
                 style={{ fontFamily: "var(--font-family-body)" }}
               >
-                VISIT THE GALLERIES
+                VIEW STORIES
               </p>
               <div className="w-24 md:w-32 h-[1px] bg-gray-900"></div>
             </div>
@@ -83,7 +83,7 @@ function CTASection() {
                 className="text-gray-900 text-xs md:text-sm uppercase tracking-wider mb-4 md:mb-6"
                 style={{ fontFamily: "var(--font-family-body)" }}
               >
-                VISIT THE GALLERIES
+                VIEW FILMS
               </p>
               <div className="w-24 md:w-32 h-[1px] bg-gray-900 ml-auto"></div>
             </div>

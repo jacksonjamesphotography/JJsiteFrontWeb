@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { EXPERIENCE_LEFT_IMAGE, EXPERIENCE_RIGHT_IMAGE } from "@/lib/constants";
 
 function ExperienceSection() {
@@ -82,7 +83,11 @@ function ExperienceSection() {
                 >
                   THE EXPERIENCE
                 </p>
-                <p className="text-base md:text-base text-text-primary">+</p>
+                <Link href="/stories">
+                  <p className="text-base md:text-base text-text-primary cursor-pointer hover:opacity-70 transition-opacity">
+                    +
+                  </p>
+                </Link>
               </div>
             </div>
           </div>
