@@ -2,22 +2,35 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { TESTIMONIALS } from "@/lib/constants";
+import { Testimonial } from "@/lib/sanity/queries";
+import { urlFor } from "@/lib/sanity.image";
 
-function TestimonialsSection() {
+interface TestimonialsSectionProps {
+  testimonials: Testimonial[];
+}
+
+function TestimonialsSection({ testimonials }: TestimonialsSectionProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  if (!testimonials || testimonials.length === 0) {
+    return null;
+  }
+
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % TESTIMONIALS.length);
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
   };
 
   const handlePrevious = () => {
     setCurrentIndex((prev) =>
-      prev === 0 ? TESTIMONIALS.length - 1 : prev - 1
+      prev === 0 ? testimonials.length - 1 : prev - 1
     );
   };
 
-  const current = TESTIMONIALS[currentIndex];
+  const current = testimonials[currentIndex];
+
+  // Generate image URLs from Sanity
+  const image1Url = urlFor(current.image1).width(600).quality(85).url();
+  const image2Url = urlFor(current.image2).width(600).quality(85).url();
 
   return (
     <section
@@ -49,18 +62,20 @@ function TestimonialsSection() {
         >
           <div className="relative w-44 h-60 md:w-56 md:h-80 lg:w-64 lg:h-84 overflow-hidden shadow-xl">
             <Image
-              src={current.image1}
+              src={image1Url}
               alt={`${current.couple} - Image 1`}
               fill
               className="object-cover"
+              sizes="(max-width: 768px) 176px, (max-width: 1024px) 224px, 256px"
             />
           </div>
           <div className="relative w-44 h-60 md:w-56 md:h-80 lg:w-64 lg:h-84 overflow-hidden shadow-xl">
             <Image
-              src={current.image2}
+              src={image2Url}
               alt={`${current.couple} - Image 2`}
               fill
               className="object-cover"
+              sizes="(max-width: 768px) 176px, (max-width: 1024px) 224px, 256px"
             />
           </div>
         </div>

@@ -170,7 +170,7 @@ function FooterSection() {
             <div className="flex justify-center items-center gap-6 md:gap-8 mb-6 px-6">
               {/* Pinterest */}
               <a
-                href="https://pinterest.com"
+                href="https://in.pinterest.com/jacksonjamesphotography"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white hover:text-gray-300 transition-colors"
@@ -202,7 +202,7 @@ function FooterSection() {
 
               {/* YouTube */}
               <a
-                href="https://youtube.com"
+                href="https://www.youtube.com/channel/UCWZ-4euafoIplCpACJPGHHw"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white hover:text-gray-300 transition-colors"
@@ -218,7 +218,7 @@ function FooterSection() {
 
               {/* Facebook */}
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/JacksonJPhotography"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white hover:text-gray-300 transition-colors"
@@ -306,7 +306,7 @@ function FooterSection() {
                     <div className="flex flex-col gap-4 md:gap-5">
                       {/* Pinterest */}
                       <a
-                        href="https://pinterest.com"
+                        href="https://in.pinterest.com/jacksonjamesphotography"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-white hover:text-gray-300 transition-colors"
@@ -338,7 +338,7 @@ function FooterSection() {
 
                       {/* YouTube */}
                       <a
-                        href="https://youtube.com"
+                        href="https://www.youtube.com/channel/UCWZ-4euafoIplCpACJPGHHw"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-white hover:text-gray-300 transition-colors"
@@ -354,7 +354,7 @@ function FooterSection() {
 
                       {/* Facebook */}
                       <a
-                        href="https://facebook.com"
+                        href="https://www.facebook.com/JacksonJPhotography"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-white hover:text-gray-300 transition-colors"

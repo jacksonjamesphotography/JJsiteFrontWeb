@@ -10,8 +10,11 @@ import ScrollImageSection from "@/components/sections/ScrollImageSection/ScrollI
 import TestimonialsSection from "@/components/sections/TestimonialsSection/TestimonialsSection";
 import DedicationSection from "@/components/sections/DedicationSection/DedicationSection";
 import FooterSection from "@/components/sections/FooterSection/FooterSection";
+import { getTestimonials } from "@/lib/sanity/queries";
 
-export default function Home() {
+async function Home() {
+  const testimonials = await getTestimonials();
+
   return (
     <div>
       <HeroSection />
@@ -23,9 +26,11 @@ export default function Home() {
       <PortfolioSection />
       <AboutJackson />
       <ScrollImageSection />
-      <TestimonialsSection />
+      <TestimonialsSection testimonials={testimonials} />
       <DedicationSection />
       <FooterSection />
     </div>
   );
 }
+
+export default Home;

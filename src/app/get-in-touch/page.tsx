@@ -4,16 +4,21 @@ import TestimonialsSection from "@/components/sections/TestimonialsSection/Testi
 import FAQSection from "@/components/pages/GetInTouchPage/FAQSection";
 import FooterSection from "@/components/sections/FooterSection/FooterSection";
 import DetailsSection from "@/components/pages/GetInTouchPage/DetailsSection";
+import { getTestimonials } from "@/lib/sanity/queries";
 
-export default function GetInTouchPage() {
+async function GetInTouchPage() {
+  const testimonials = await getTestimonials();
+
   return (
     <main>
       <GetInTouchHeader />
       <ContactForm />
-      <TestimonialsSection />
+      <TestimonialsSection testimonials={testimonials} />
       <FAQSection />
-      <DetailsSection />    
+      <DetailsSection />
       <FooterSection />
     </main>
   );
 }
+
+export default GetInTouchPage;

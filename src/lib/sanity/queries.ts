@@ -57,3 +57,25 @@ const filmsQuery = `*[_type == "film"] | order(coupleName asc) {
 export async function getFilms(): Promise<Film[]> {
   return await client.fetch<Film[]>(filmsQuery);
 }
+
+export interface Testimonial {
+  _id: string;
+  couple: string;
+  image1: any;
+  image2: any;
+  testimonial: string;
+  order?: number;
+}
+
+const testimonialsQuery = `*[_type == "testimonial"] | order(order asc, couple asc) {
+  _id,
+  couple,
+  image1,
+  image2,
+  testimonial,
+  order
+}`;
+
+export async function getTestimonials(): Promise<Testimonial[]> {
+  return await client.fetch<Testimonial[]>(testimonialsQuery);
+}

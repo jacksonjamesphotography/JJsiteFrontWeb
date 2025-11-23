@@ -109,32 +109,39 @@ function StoryGallery({ story }: StoryGalleryProps) {
             <Masonry
               breakpointCols={{
                 default: 3,
+                1400: 3,
                 1024: 3,
+                768: 2,
                 640: 2,
               }}
-              className="flex -ml-2 sm:-ml-2 md:-ml-3"
-              columnClassName="pl-2 sm:pl-2 md:pl-3"
+              className="flex -ml-2 sm:-ml-2.5 md:-ml-3 w-auto"
+              columnClassName="pl-2 sm:pl-2.5 md:pl-3 bg-clip-padding"
+              style={{ width: "100%" }}
             >
               {galleryImages.map((image, index) => {
-                // Gallery thumbnails: 75% quality, 600px width - smaller for better layout
-                const imageUrl = urlFor(image).width(600).quality(80).url();
-                // Full-size modal: 90% quality, 2400px width - high quality when opened
+                // Gallery thumbnails: optimized for masonry layout - larger size
+                const imageUrl = urlFor(image).width(1000).quality(85).url();
+                // Full-size modal: high quality when opened
                 const fullSizeUrl = urlFor(image).width(2400).quality(90).url();
 
                 return (
                   <PhotoView key={index} src={fullSizeUrl}>
-                    <div className="relative w-full cursor-pointer group overflow-hidden mb-2 sm:mb-2 md:mb-3">
+                    <div className="relative w-full cursor-pointer group overflow-hidden mb-2 sm:mb-2.5 md:mb-3 break-inside-avoid">
                       <Image
                         src={imageUrl}
                         alt={`${displayName} - Image ${index + 1}`}
-                        width={600}
-                        height={900}
+                        width={1000}
+                        height={1500}
                         className="w-full h-auto transition-transform duration-300 group-hover:scale-[1.02]"
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        quality={75}
-                        style={{ height: "auto", width: "100%" }}
+                        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 33vw"
+                        quality={85}
+                        style={{
+                          height: "auto",
+                          width: "100%",
+                          display: "block",
+                        }}
                       />
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300 pointer-events-none" />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300 pointer-events-none rounded-sm" />
                     </div>
                   </PhotoView>
                 );

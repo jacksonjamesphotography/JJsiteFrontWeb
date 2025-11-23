@@ -31,8 +31,14 @@ export default {
     {
       name: 'gallery',
       title: 'Gallery Photos',
+      description:
+        'You can drag and drop multiple images here, or use the "Add" button and select multiple images in the media library.',
       type: 'array',
       of: [{type: 'image', options: {hotspot: true}}],
+      options: {
+        layout: 'grid',
+        sortable: true,
+      },
       validation: (Rule: Rule) => Rule.min(1),
     },
   ],
