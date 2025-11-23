@@ -20,9 +20,38 @@
 }
 
 @layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    /* Prevent address bar from affecting layout on mobile */
+    height: -webkit-fill-available;
+  }
+
   body {
     @apply bg-background text-text-primary;
     font-family: var(--font-family-body);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Prevent layout shifts on mobile */
+    position: relative;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    /* Prevent scroll jumping on mobile */
+    overscroll-behavior-y: none;
+    touch-action: pan-y;
+    /* Fix for iOS Safari */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Prevent layout shifts from fixed elements */
+  [class*="fixed"] {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
   }
 
   h1,
@@ -45,5 +74,16 @@
 
   hr {
     @apply border border-border w-full;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.jacksonjames.in/sitemap.xml
+
+# Disallow admin/studio pages
+User-agent: *
+Disallow: /studio/
+Disallow: /api/
+

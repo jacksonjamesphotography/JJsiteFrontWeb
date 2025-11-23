@@ -1,13 +1,34 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "../styles/globals.css";
 // import Navbar from "@/components/layout/Navbar";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import ConditionalNavbar from "@/components/layout/ConditionalNavbar";
+import CookieConsent from "@/components/layout/CookieConsent";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+};
 
 export const metadata: Metadata = {
-  title: "Jackson James Photography",
-  description: "Capturing moments that last a lifetime",
+  title: {
+    default:
+      "Jackson James Wedding Photographer | Best Candid Wedding Photographer in Kochi, Kerala & India",
+    template: "%s | Jackson James Photography",
+  },
+  description:
+    "Award-winning wedding photographer specializing in candid, documentary, and fine-art wedding photography. Top wedding photographer in Kochi, Kerala, and India. Professional destination wedding photographer for luxury weddings worldwide.",
+  keywords: [
+    "Wedding Photographer Kochi",
+    "Wedding Photographer Kerala",
+    "Candid Wedding Photographer",
+    "Destination Wedding Photographer India",
+    "Best Wedding Photographer in Kerala",
+    "Professional Wedding Photographer",
+  ],
   icons: {
     icon: [
       { url: "/icons/iconLogo.png", type: "image/png", sizes: "any" },
@@ -19,13 +40,15 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "Jackson James Photography",
-    description: "Capturing moments that last a lifetime",
-    url: "https://jacksonjamesphotography.vercel.app",
+    title:
+      "Jackson James Wedding Photographer | Best Candid Wedding Photographer in Kochi, Kerala",
+    description:
+      "Award-winning wedding photographer specializing in candid, documentary, and fine-art wedding photography. Top wedding photographer in Kochi, Kerala, and India.",
+    url: "https://www.jacksonjames.in",
     siteName: "Jackson James Photography",
     images: [
       {
-        url: "https://jacksonjamesphotography.vercel.app/icons/iconLogo.png",
+        url: "https://www.jacksonjames.in/icons/iconLogo.png",
         width: 1200,
         height: 630,
         alt: "Jackson James Photography",
@@ -36,11 +59,23 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jackson James Photography",
-    description: "Capturing moments that last a lifetime",
-    images: ["https://jacksonjamesphotography.vercel.app/icons/iconLogo.png"],
+    title: "Jackson James Wedding Photographer | Best in Kochi, Kerala & India",
+    description:
+      "Award-winning candid wedding photographer in Kochi, Kerala. Professional destination wedding photography services.",
+    images: ["https://www.jacksonjames.in/icons/iconLogo.png"],
   },
-  metadataBase: new URL("https://jacksonjamesphotography.vercel.app"),
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  metadataBase: new URL("https://www.jacksonjames.in"),
 };
 
 export default function RootLayout({
@@ -49,10 +84,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      style={{ scrollBehavior: "smooth" }}
+    >
       <body className="antialiased">
         <ConditionalNavbar />
         <main>{children}</main>
+        <CookieConsent />
         <SpeedInsights />
         <Analytics />
       </body>

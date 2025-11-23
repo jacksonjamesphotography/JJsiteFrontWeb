@@ -427,7 +427,7 @@ function FooterSection() {
             >
               Website Designed by{" "}
               <a
-                href="https://designloop.framer.website/"
+                href="https://instagram.com/sshashank_singh_"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white hover:text-white hover:underline transition-all duration-300"
@@ -435,7 +435,7 @@ function FooterSection() {
                   fontFamily: "var(--font-family-heading)",
                 }}
               >
-                DesignLOOP
+                Shashank Singh
               </a>
             </p>
           </div>

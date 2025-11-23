@@ -15,7 +15,7 @@ function ExperienceSection() {
             <div className="relative h-[550px] w-full overflow-hidden shadow-lg -mt-12 -ml-12">
               <Image
                 src={EXPERIENCE_LEFT_IMAGE}
-                alt="Wedding Photography"
+                alt="Candid Wedding Photography in Kerala - Jackson James Wedding Photographer"
                 fill
                 className="object-cover"
               />
@@ -97,7 +97,7 @@ function ExperienceSection() {
             <div className="relative h-[500px] w-full overflow-hidden shadow-lg mt-12">
               <Image
                 src={EXPERIENCE_RIGHT_IMAGE}
-                alt="Wedding Moments"
+                alt="Destination Wedding Photography India - Professional Wedding Photographer"
                 fill
                 className="object-cover"
               />
