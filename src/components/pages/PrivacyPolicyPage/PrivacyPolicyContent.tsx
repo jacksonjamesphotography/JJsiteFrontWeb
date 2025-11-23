@@ -315,7 +315,7 @@ export default function PrivacyPolicyContent() {
               style={{ fontFamily: "var(--font-family-body)" }}
             >
               To exercise these rights, please contact us using the information
-              provided in the "Contact Us" section below.
+              provided in the &quot;Contact Us&quot; section below.
             </p>
           </div>
 
@@ -373,7 +373,7 @@ export default function PrivacyPolicyContent() {
                 color: "#2E2E2E",
               }}
             >
-              8. Children's Privacy
+              8. Children&apos;s Privacy
             </h2>
             <p
               className="text-sm md:text-base text-gray-700 leading-relaxed"
@@ -405,9 +405,9 @@ export default function PrivacyPolicyContent() {
               We may update this Privacy Policy from time to time to reflect
               changes in our practices or for legal, operational, or regulatory
               reasons. We will notify you of any material changes by posting the
-              updated policy on this page and updating the "Last Updated" date.
-              Your continued use of our services after such changes constitutes
-              your acceptance of the updated Privacy Policy.
+              updated policy on this page and updating the &quot;Last
+              Updated&quot; date. Your continued use of our services after such
+              changes constitutes your acceptance of the updated Privacy Policy.
             </p>
           </div>
 
