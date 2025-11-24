@@ -94,7 +94,7 @@ function TestimonialsSection({ testimonials }: TestimonialsSectionProps) {
         </div>
 
         {/* Testimonial Text */}
-        <div className="max-w-3xl mx-auto mb-12 md:mb-16">
+        <div className="max-w-3xl mx-auto mb-6 md:mb-8">
           <p
             className="text-[10px] sm:text-xs md:text-sm leading-relaxed text-justify tracking-wide"
             style={{
@@ -108,7 +108,7 @@ function TestimonialsSection({ testimonials }: TestimonialsSectionProps) {
         </div>
 
         {/* Navigation */}
-        <div className="flex justify-center items-center gap-8">
+        <div className="flex justify-center items-center gap-8 -mt-2">
           <button
             onClick={handlePrevious}
             className="text-xs md:text-sm uppercase tracking-wider hover:opacity-70 transition-opacity duration-300 font-light cursor-pointer"
