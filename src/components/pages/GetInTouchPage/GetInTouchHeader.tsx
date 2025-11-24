@@ -56,7 +56,7 @@ export default function GetInTouchHeader() {
                 src={
                   isMobile
                     ? "/images/GetInTouch/headerMobile.jpg"
-                    : "/images/GetInTouch/headerdesktop2.jpg"
+                    : "/images/GetInTouch/headerDesktop2.jpg"
                 }
                 alt="Get in Touch"
                 fill
