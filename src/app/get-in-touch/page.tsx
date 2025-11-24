@@ -9,9 +9,9 @@ import { getTestimonials } from "@/lib/sanity/queries";
 
 export const metadata: Metadata = {
   title:
-    "Book Wedding Photographer | Contact & Hire Jackson James Photography - Kochi, Kerala",
+    "Contact Jackson James Photography",
   description:
-    "Book your wedding photographer today! Contact Jackson James Photography for wedding photography packages in Kerala, Kochi, and India. Hire an experienced, award-winning wedding photographer for your special day. Get quotes for destination wedding photography packages.",
+    "Contact Jackson James Photography to book your wedding photographer in Kochi, India. Get package quotes now.",
   keywords: [
     "Hire Wedding Photographer Kerala",
     "Book Wedding Photographer Kochi",

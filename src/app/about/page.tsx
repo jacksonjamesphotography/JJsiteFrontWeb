@@ -10,7 +10,7 @@ import OurCommunity from "@/components/pages/AboutUsPage/OurCommunity";
 export const metadata: Metadata = {
   title: "About Jackson James",
   description:
-    "Meet Jackson James, wedding photographer based in Kochi, Kerala.",
+    "Jackson James, a wedding photographer based in Kochi, Kerala.",
   keywords: [
     "About Jackson James Photographer",
     "Experienced Wedding Photographer Kerala",

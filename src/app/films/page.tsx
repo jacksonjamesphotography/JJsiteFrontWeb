@@ -7,9 +7,9 @@ import { getFilms } from "@/lib/sanity/queries";
 
 export const metadata: Metadata = {
   title:
-    "Wedding Films & Videography | Professional Wedding Videographer Kerala & India",
+    "Wedding Films & Videography",
   description:
-    "Professional wedding videography and filmmaking services in Kerala, Kochi, and India. Cinematic wedding films capturing your special day. Award-winning wedding videographer creating beautiful wedding films.",
+     "Cinematic wedding videography and films in Kerala, Kochi, India.",
   keywords: [
     "Wedding Videographer Kerala",
     "Wedding Film Maker Kerala",

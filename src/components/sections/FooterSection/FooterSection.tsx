@@ -1,23 +1,55 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { ROUTES, FOOTER_BG_IMAGE, footerLinks } from "@/lib/constants";
 
+// Array of footer background images
+const FOOTER_BG_IMAGES = [
+  "/images/Footer/footerBg.jpg",
+  "/images/Footer/footerBg3.jpg",
+  "/images/Footer/footerBg4.jpeg",
+  "/images/Footer/footerBg5.jpg",
+  "/images/Footer/footerBg6.jpg",
+  "/images/Footer/footerBg7.jpg",
+];
+
 function FooterSection() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => {
+        const nextIndex = (prevIndex + 1) % FOOTER_BG_IMAGES.length;
+        return nextIndex;
+      });
+    }, 9000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
       {/* First Section - CTA with Background */}
       <section className="relative w-full h-[500px] md:h-[600px] lg:h-[700px] overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <Image
-            src={FOOTER_BG_IMAGE}
-            alt="Footer Background"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
+        {/* Background Images with fade transition */}
+        {FOOTER_BG_IMAGES.map((image, index) => (
+          <div
+            key={image}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              index === currentImageIndex ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <Image
+              src={image}
+              alt="Footer Background"
+              fill
+              className="object-cover"
+              priority={index < 2}
+              loading={index < 2 ? "eager" : "lazy"}
+            />
+          </div>
+        ))}
 
         {/* Overlay */}
         <div
@@ -119,9 +151,10 @@ function FooterSection() {
               color: "#FFFFFFFF",
             }}
           >
-            Documenting the moments you&apos;ll cherish forever, because let&apos;s{" "}
-            <br className="hidden md:block" />
-            face it, you&apos;ll need proof for the &apos;remember when&apos; debates!
+            Documenting the moments you&apos;ll cherish forever, because
+            let&apos;s <br className="hidden md:block" />
+            face it, you&apos;ll need proof for the &apos;remember when&apos;
+            debates!
           </h3>
 
           {/* Mobile/Tablet Layout */}

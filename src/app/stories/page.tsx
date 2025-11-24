@@ -7,16 +7,16 @@ import { getStories } from "@/lib/sanity/queries";
 
 export const metadata: Metadata = {
   title:
-    "Wedding Stories Gallery | Wedding Photography Portfolio - Kochi, Kerala",
+    "Wedding Stories Gallery",
   description:
-    "Browse our collection of wedding photography stories from real weddings across Kerala, Kochi, and India. View our portfolio capturing authentic moments and emotions from weddings we've photographed.",
+    "Explore real wedding photography stories from Kerala, Kochi, and India in our portfolio.",
   keywords: [
+    "Wedding Stories Gallery",
     "Wedding Photography Portfolio",
     "Wedding Photography Gallery",
-    "Wedding Stories Kerala",
-    "Wedding Photography Examples",
-    "Real Wedding Photography",
-    "Kerala Wedding Photography Gallery",
+    "Wedding Stories in Kerala",
+    "Real Wedding Photography Stories",
+    "Kerala Wedding Photography Stories",
     "Kochi Wedding Photography Stories",
     "Wedding Photo Gallery",
   ],
