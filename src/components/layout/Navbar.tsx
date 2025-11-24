@@ -13,7 +13,7 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Pages where we don't want blur effect
-  const pagesWithoutBlur = ["/about", "/films", "/stories"];
+  const pagesWithoutBlur = ["/about", "/films", "/stories", "/get-in-touch"];
   const shouldDisableBlur = pagesWithoutBlur.includes(pathname);
   
   // Story gallery pages (individual story pages) should have solid background
