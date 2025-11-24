@@ -9,6 +9,9 @@ interface StoryPageProps {
   }>;
 }
 
+// Revalidate every 60 seconds (ISR)
+export const revalidate = 60;
+
 async function StoryPage({ params }: StoryPageProps) {
   const { slug } = await params;
   const story = await getStoryBySlug(slug);

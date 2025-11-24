@@ -6,10 +6,9 @@ import FooterSection from "@/components/sections/FooterSection/FooterSection";
 import { getFilms } from "@/lib/sanity/queries";
 
 export const metadata: Metadata = {
-  title:
-    "Wedding Films & Videography",
+  title: "Wedding Films & Videography",
   description:
-     "Cinematic wedding videography and films in Kerala, Kochi, India.",
+    "Cinematic wedding videography and films in Kerala, Kochi, India.",
   keywords: [
     "Wedding Videographer Kerala",
     "Wedding Film Maker Kerala",
@@ -31,6 +30,9 @@ export const metadata: Metadata = {
     canonical: "https://www.jacksonjames.in/films",
   },
 };
+
+// Revalidate every 60 seconds (ISR)
+export const revalidate = 60;
 
 async function FilmsPage() {
   const films = await getFilms();

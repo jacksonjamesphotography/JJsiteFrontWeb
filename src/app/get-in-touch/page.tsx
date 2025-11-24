@@ -8,8 +8,7 @@ import DetailsSection from "@/components/pages/GetInTouchPage/DetailsSection";
 import { getTestimonials } from "@/lib/sanity/queries";
 
 export const metadata: Metadata = {
-  title:
-    "Contact Jackson James Photography",
+  title: "Contact Jackson James Photography",
   description:
     "Contact Jackson James Photography to book your wedding photographer in Kochi, India. Get package quotes now.",
   keywords: [
@@ -33,6 +32,9 @@ export const metadata: Metadata = {
     canonical: "https://www.jacksonjames.in/get-in-touch",
   },
 };
+
+// Revalidate every 60 seconds (ISR)
+export const revalidate = 60;
 
 async function GetInTouchPage() {
   const testimonials = await getTestimonials();

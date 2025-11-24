@@ -83,6 +83,9 @@ export const metadata: Metadata = {
   },
 };
 
+// Revalidate every 60 seconds (ISR)
+export const revalidate = 60;
+
 async function Home() {
   const testimonials = await getTestimonials();
 

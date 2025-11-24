@@ -6,8 +6,7 @@ import FooterSection from "@/components/sections/FooterSection/FooterSection";
 import { getStories } from "@/lib/sanity/queries";
 
 export const metadata: Metadata = {
-  title:
-    "Wedding Stories Gallery",
+  title: "Wedding Stories Gallery",
   description:
     "Explore real wedding photography stories from Kerala, Kochi, and India in our portfolio.",
   keywords: [
@@ -30,6 +29,9 @@ export const metadata: Metadata = {
     canonical: "https://www.jacksonjames.in/stories",
   },
 };
+
+// Revalidate every 60 seconds (ISR)
+export const revalidate = 60;
 
 async function StoriesPage() {
   const stories = await getStories();

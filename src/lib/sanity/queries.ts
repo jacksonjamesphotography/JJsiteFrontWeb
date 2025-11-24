@@ -19,7 +19,13 @@ const storiesQuery = `*[_type == "story"] | order(coupleName asc) {
 }`;
 
 export async function getStories(): Promise<Story[]> {
-  return await client.fetch<Story[]>(storiesQuery);
+  return await client.fetch<Story[]>(
+    storiesQuery,
+    {},
+    {
+      next: { revalidate: 60 },
+    }
+  );
 }
 
 const storyBySlugQuery = `*[_type == "story" && slug.current == $slug][0] {
@@ -31,7 +37,13 @@ const storyBySlugQuery = `*[_type == "story" && slug.current == $slug][0] {
 }`;
 
 export async function getStoryBySlug(slug: string): Promise<Story | null> {
-  return await client.fetch<Story | null>(storyBySlugQuery, { slug });
+  return await client.fetch<Story | null>(
+    storyBySlugQuery,
+    { slug },
+    {
+      next: { revalidate: 60 },
+    }
+  );
 }
 
 export interface Film {
@@ -55,7 +67,13 @@ const filmsQuery = `*[_type == "film"] | order(coupleName asc) {
 }`;
 
 export async function getFilms(): Promise<Film[]> {
-  return await client.fetch<Film[]>(filmsQuery);
+  return await client.fetch<Film[]>(
+    filmsQuery,
+    {},
+    {
+      next: { revalidate: 60 },
+    }
+  );
 }
 
 export interface Testimonial {
@@ -77,5 +95,11 @@ const testimonialsQuery = `*[_type == "testimonial"] | order(order asc, couple a
 }`;
 
 export async function getTestimonials(): Promise<Testimonial[]> {
-  return await client.fetch<Testimonial[]>(testimonialsQuery);
+  return await client.fetch<Testimonial[]>(
+    testimonialsQuery,
+    {},
+    {
+      next: { revalidate: 60 },
+    }
+  );
 }
