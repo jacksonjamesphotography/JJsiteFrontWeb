@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import "../styles/globals.css";
 // import Navbar from "@/components/layout/Navbar";
 import { Analytics } from "@vercel/analytics/next";
@@ -90,6 +91,19 @@ export default function RootLayout({
       style={{ scrollBehavior: "smooth" }}
     >
       <body className="antialiased">
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-Z5KWXVSV6L"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-Z5KWXVSV6L');
+          `}
+        </Script>
         <ConditionalNavbar />
         <main>{children}</main>
         <CookieConsent />
