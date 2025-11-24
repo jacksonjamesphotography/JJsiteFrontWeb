@@ -67,42 +67,64 @@ export default function DetailsSection() {
                 475 (1st floor), 11th cross road, <br />
                 Panampilly nagar, Kochi-268036
               </a>
-              <div className="flex justify-center">
+              <div className="flex justify-center items-center gap-1">
                 <button
                   onClick={() => copyToClipboard(addressText, "address")}
-                  className="hover:opacity-70 transition-opacity"
+                  className="flex items-center gap-1 hover:opacity-70 transition-opacity"
                   aria-label="Copy address"
                 >
                   {copied === "address" ? (
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      style={{ color: "#6A4F3D" }}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
+                    <>
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        style={{ color: "#6A4F3D" }}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      <span
+                        className="text-xs"
+                        style={{
+                          fontFamily: "var(--font-family-body)",
+                          color: "#6A4F3D",
+                        }}
+                      >
+                        Copied
+                      </span>
+                    </>
                   ) : (
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      style={{ color: "#6A4F3D" }}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-                      />
-                    </svg>
+                    <>
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        style={{ color: "#6A4F3D" }}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                        />
+                      </svg>
+                      <span
+                        className="text-xs"
+                        style={{
+                          fontFamily: "var(--font-family-body)",
+                          color: "#6A4F3D",
+                        }}
+                      >
+                        Copy
+                      </span>
+                    </>
                   )}
                 </button>
               </div>
@@ -148,39 +170,61 @@ export default function DetailsSection() {
                 </a>
                 <button
                   onClick={() => copyToClipboard(phoneText, "phone")}
-                  className="flex-shrink-0 hover:opacity-70 transition-opacity"
+                  className="flex items-center gap-1 flex-shrink-0 hover:opacity-70 transition-opacity"
                   aria-label="Copy phone number"
                 >
                   {copied === "phone" ? (
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      style={{ color: "#6A4F3D" }}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
+                    <>
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        style={{ color: "#6A4F3D" }}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      <span
+                        className="text-xs"
+                        style={{
+                          fontFamily: "var(--font-family-body)",
+                          color: "#6A4F3D",
+                        }}
+                      >
+                        Copied
+                      </span>
+                    </>
                   ) : (
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      style={{ color: "#6A4F3D" }}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-                      />
-                    </svg>
+                    <>
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        style={{ color: "#6A4F3D" }}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                        />
+                      </svg>
+                      <span
+                        className="text-xs"
+                        style={{
+                          fontFamily: "var(--font-family-body)",
+                          color: "#6A4F3D",
+                        }}
+                      >
+                        Copy
+                      </span>
+                    </>
                   )}
                 </button>
               </div>
@@ -223,39 +267,61 @@ export default function DetailsSection() {
               </a>
               <button
                 onClick={() => copyToClipboard(emailText, "email")}
-                className="flex-shrink-0 hover:opacity-70 transition-opacity"
+                className="flex items-center gap-1 flex-shrink-0 hover:opacity-70 transition-opacity"
                 aria-label="Copy email"
               >
                 {copied === "email" ? (
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    style={{ color: "#6A4F3D" }}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
+                  <>
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      style={{ color: "#6A4F3D" }}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span
+                      className="text-xs"
+                      style={{
+                        fontFamily: "var(--font-family-body)",
+                        color: "#6A4F3D",
+                      }}
+                    >
+                      Copied
+                    </span>
+                  </>
                 ) : (
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    style={{ color: "#6A4F3D" }}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-                    />
-                  </svg>
+                  <>
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      style={{ color: "#6A4F3D" }}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                      />
+                    </svg>
+                    <span
+                      className="text-xs"
+                      style={{
+                        fontFamily: "var(--font-family-body)",
+                        color: "#6A4F3D",
+                      }}
+                    >
+                      Copy
+                    </span>
+                  </>
                 )}
               </button>
             </div>
