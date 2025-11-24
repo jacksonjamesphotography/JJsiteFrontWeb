@@ -8,7 +8,8 @@ import DetailsSection from "@/components/pages/GetInTouchPage/DetailsSection";
 import { getTestimonials } from "@/lib/sanity/queries";
 
 export const metadata: Metadata = {
-  title: "Book Wedding Photographer | Contact & Hire Jackson James Photography - Kochi, Kerala",
+  title:
+    "Book Wedding Photographer | Contact & Hire Jackson James Photography - Kochi, Kerala",
   description:
     "Book your wedding photographer today! Contact Jackson James Photography for wedding photography packages in Kerala, Kochi, and India. Hire an experienced, award-winning wedding photographer for your special day. Get quotes for destination wedding photography packages.",
   keywords: [
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
     "Wedding Photographer Quote",
     "Book Wedding Photographer",
     "Wedding Photography Booking",
-    "Affordable Candid Photographer Kochi",
+    "Wedding Photographer Kochi",
   ],
   openGraph: {
     title: "Book Wedding Photographer | Contact Jackson James Photography",

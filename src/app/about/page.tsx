@@ -8,9 +8,9 @@ import OurJourney from "@/components/pages/AboutUsPage/OurJourney";
 import OurCommunity from "@/components/pages/AboutUsPage/OurCommunity";
 
 export const metadata: Metadata = {
-  title: "About Jackson James | Experienced Award-Winning Wedding Photographer in Kerala & India",
+  title: "About Jackson James",
   description:
-    "Meet Jackson James, an experienced and award-winning wedding photographer based in Kochi, Kerala. With years of professional experience, Jackson specializes in candid, documentary, and fine-art wedding photography. Internationally published photographer serving clients across Kerala, India, and worldwide.",
+    "Meet Jackson James, wedding photographer based in Kochi, Kerala.",
   keywords: [
     "About Jackson James Photographer",
     "Experienced Wedding Photographer Kerala",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About Jackson James | Award-Winning Wedding Photographer in Kerala",
     description:
-      "Meet Jackson James, an experienced and award-winning wedding photographer specializing in candid, documentary, and fine-art wedding photography in Kerala, India, and internationally.",
+      "Meet Jackson James, an experienced and award-winning wedding photographer capturing authentic moments and emotions for weddings in Kerala, India, and internationally.",
     url: "https://www.jacksonjames.in/about",
   },
   alternates: {

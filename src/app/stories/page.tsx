@@ -7,23 +7,23 @@ import { getStories } from "@/lib/sanity/queries";
 
 export const metadata: Metadata = {
   title:
-    "Wedding Stories Gallery | Candid Wedding Photography Portfolio - Kochi, Kerala",
+    "Wedding Stories Gallery | Wedding Photography Portfolio - Kochi, Kerala",
   description:
-    "Browse our stunning collection of candid wedding photography stories from real weddings across Kerala, Kochi, and India. View our portfolio of documentary-style wedding photography capturing authentic moments and emotions.",
+    "Browse our collection of wedding photography stories from real weddings across Kerala, Kochi, and India. View our portfolio capturing authentic moments and emotions from weddings we've photographed.",
   keywords: [
     "Wedding Photography Portfolio",
-    "Candid Wedding Photography Gallery",
+    "Wedding Photography Gallery",
     "Wedding Stories Kerala",
     "Wedding Photography Examples",
     "Real Wedding Photography",
-    "Documentary Wedding Photography Portfolio",
     "Kerala Wedding Photography Gallery",
     "Kochi Wedding Photography Stories",
+    "Wedding Photo Gallery",
   ],
   openGraph: {
-    title: "Wedding Stories Gallery | Candid Wedding Photography Portfolio",
+    title: "Wedding Stories Gallery | Wedding Photography Portfolio",
     description:
-      "Browse our stunning collection of candid wedding photography stories from real weddings across Kerala, Kochi, and India.",
+      "Browse our collection of wedding photography stories from real weddings across Kerala, Kochi, and India.",
     url: "https://www.jacksonjames.in/stories",
   },
   alternates: {

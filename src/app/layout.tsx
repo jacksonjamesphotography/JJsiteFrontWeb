@@ -16,11 +16,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: {
     default:
-      "Jackson James Wedding Photographer | Best Candid Wedding Photographer in Kochi, Kerala & India",
+      "Jackson James Wedding Photographer | Best Wedding Photographer in Kochi, Kerala & India",
     template: "%s | Jackson James Photography",
   },
   description:
-    "Award-winning wedding photographer specializing in candid, documentary, and fine-art wedding photography. Top wedding photographer in Kochi, Kerala, and India. Professional destination wedding photographer for luxury weddings worldwide.",
+    "Award-winning wedding photographer capturing authentic moments and emotions. Top wedding photographer in Kochi, Kerala, and India. Professional destination wedding photographer for luxury weddings worldwide.",
   keywords: [
     "Wedding Photographer Kochi",
     "Wedding Photographer Kerala",

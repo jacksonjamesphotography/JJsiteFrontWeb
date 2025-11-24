@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title:
     "Wedding Films & Videography | Professional Wedding Videographer Kerala & India",
   description:
-    "Professional wedding videography and filmmaking services in Kerala, Kochi, and India. Cinematic wedding films capturing your special day. Award-winning wedding videographer specializing in documentary-style wedding films.",
+    "Professional wedding videography and filmmaking services in Kerala, Kochi, and India. Cinematic wedding films capturing your special day. Award-winning wedding videographer creating beautiful wedding films.",
   keywords: [
     "Wedding Videographer Kerala",
     "Wedding Film Maker Kerala",

@@ -15,10 +15,9 @@ import StructuredData from "@/components/seo/StructuredData";
 import { getTestimonials } from "@/lib/sanity/queries";
 
 export const metadata: Metadata = {
-  title:
-    "Jackson James Wedding Photographer | Best Candid Wedding Photographer in Kochi, Kerala & India",
+  title: "Jackson James Wedding Photography",
   description:
-    "Jackson James is an award-winning wedding photographer specializing in candid, documentary, and fine-art wedding photography. Top wedding photographer in Kochi, Kerala, and India. Professional destination wedding photographer for luxury weddings across India and internationally. Book your wedding photographer today.",
+    "Jackson James is an award-winning wedding photographer based in Kochi, Kerala. Specializing in capturing authentic moments and emotions for weddings across India and internationally. Professional destination wedding photography services for luxury weddings. Book your wedding photographer today.",
   keywords: [
     "Jackson James Photographer",
     "Jackson James Wedding Photographer",
@@ -33,18 +32,13 @@ export const metadata: Metadata = {
     "Candid Wedding Photographer Kochi",
     "Luxury Wedding Photographer India",
     "Premium Wedding Photographer",
-    "Candid Photographer Kochi",
     "Best Kochi Wedding Photographer",
     "Pre-Wedding Photography Kochi",
-    "Kerala Candid Photographer",
     "Best Wedding Photography Kerala",
     "Destination Wedding Photographer Kerala",
     "Indian Wedding Photographer",
     "South India Wedding Photographer",
     "Professional Photographer India",
-    "Candid Wedding Photographer",
-    "Documentary Wedding Photographer",
-    "Fine-Art Wedding Photographer",
     "Cinematic Wedding Photography",
     "Storytelling Wedding Photographer",
     "Pre-Wedding Photographer Kerala",
@@ -61,9 +55,9 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title:
-      "Jackson James Wedding Photographer | Best Candid Wedding Photographer in Kochi, Kerala",
+      "Jackson James Wedding Photographer | Best Wedding Photographer in Kochi, Kerala",
     description:
-      "Award-winning wedding photographer specializing in candid, documentary, and fine-art wedding photography. Top wedding photographer in Kochi, Kerala, and India. Professional destination wedding photography services.",
+      "Award-winning wedding photographer in Kochi, Kerala, and India. Capturing authentic moments and emotions for weddings across India and internationally. Professional destination wedding photography services.",
     url: "https://www.jacksonjames.in",
     siteName: "Jackson James Photography",
     images: [
@@ -81,7 +75,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Jackson James Wedding Photographer | Best in Kochi, Kerala & India",
     description:
-      "Award-winning candid wedding photographer in Kochi, Kerala. Professional destination wedding photography services across India and internationally.",
+      "Award-winning wedding photographer in Kochi, Kerala. Professional destination wedding photography services across India and internationally.",
     images: ["https://www.jacksonjames.in/icons/iconLogo.png"],
   },
   alternates: {
