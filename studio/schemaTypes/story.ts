@@ -32,7 +32,7 @@ export default {
       name: 'gallery',
       title: 'Gallery Photos',
       description:
-        'You can drag and drop multiple images here, or use the "Add" button and select multiple images in the media library.',
+        'IMPORTANT: To upload multiple images at once, drag and drop multiple image files from your computer directly onto this grid area. The file picker dialog only allows single selection.',
       type: 'array',
       of: [{type: 'image', options: {hotspot: true}}],
       options: {

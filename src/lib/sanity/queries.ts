@@ -10,7 +10,7 @@ export interface Story {
   gallery?: any[];
 }
 
-const storiesQuery = `*[_type == "story"] | order(coupleName asc) {
+const storiesQuery = `*[_type == "story"] | order(_createdAt desc) {
   _id,
   coupleName,
   slug,
