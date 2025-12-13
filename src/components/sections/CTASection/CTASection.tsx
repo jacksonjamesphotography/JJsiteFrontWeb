@@ -16,7 +16,10 @@ function CTASection() {
           src={CTA_STORIES_IMAGE}
           alt="Stories"
           fill
+          quality={85}
+          loading="lazy"
           className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
+          sizes="50vw"
         />
 
         {/* Hover Overlay */}
@@ -65,7 +68,10 @@ function CTASection() {
           src={CTA_FILMS_IMAGE}
           alt="Films"
           fill
+          quality={85}
+          loading="lazy"
           className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
+          sizes="50vw"
         />
 
         {/* Hover Overlay */}

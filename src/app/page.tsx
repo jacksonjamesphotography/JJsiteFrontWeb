@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     title:
       "Jackson James Wedding Photographer | Best Wedding Photographer in Kochi, Kerala",
     description:
-      "Award-winning wedding photographer in Kochi, Kerala, and India. Capturing authentic moments and emotions for weddings across India and internationally. Professional destination wedding photography services.",
+      "wedding photographer in Kochi, Kerala, and India. Capturing authentic moments and emotions for weddings across India and internationally. Professional destination wedding photography services.",
     url: "https://www.jacksonjames.in",
     siteName: "Jackson James Photography",
     images: [

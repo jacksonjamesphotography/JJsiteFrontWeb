@@ -28,9 +28,9 @@ function TestimonialsSection({ testimonials }: TestimonialsSectionProps) {
 
   const current = testimonials[currentIndex];
 
-  // Generate image URLs from Sanity
-  const image1Url = urlFor(current.image1).width(600).quality(85).url();
-  const image2Url = urlFor(current.image2).width(600).quality(85).url();
+  // Generate optimized image URLs from Sanity
+  const image1Url = urlFor(current.image1).width(800).quality(85).url();
+  const image2Url = urlFor(current.image2).width(800).quality(85).url();
 
   return (
     <section
@@ -65,6 +65,8 @@ function TestimonialsSection({ testimonials }: TestimonialsSectionProps) {
               src={image1Url}
               alt={`${current.couple} - Image 1`}
               fill
+              quality={85}
+              loading="lazy"
               className="object-cover"
               sizes="(max-width: 768px) 176px, (max-width: 1024px) 224px, 256px"
             />
@@ -74,6 +76,8 @@ function TestimonialsSection({ testimonials }: TestimonialsSectionProps) {
               src={image2Url}
               alt={`${current.couple} - Image 2`}
               fill
+              quality={85}
+              loading="lazy"
               className="object-cover"
               sizes="(max-width: 768px) 176px, (max-width: 1024px) 224px, 256px"
             />

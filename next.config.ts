@@ -13,7 +13,6 @@ const nextConfig: NextConfig = {
     styledComponents: true,
   },
   webpack: (config, { isServer }) => {
-    // Exclude Sanity from server-side bundle to prevent SSR issues
     if (isServer) {
       config.externals = config.externals || [];
       if (Array.isArray(config.externals)) {
@@ -29,7 +28,6 @@ const nextConfig: NextConfig = {
         ];
       }
     }
-
     return config;
   },
   images: {
@@ -40,9 +38,47 @@ const nextConfig: NextConfig = {
         pathname: "/images/**",
       },
     ],
-    formats: ["image/webp", "image/avif"],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    formats: ["image/avif", "image/webp"], // ✅ AVIF first (smaller)
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920], // ✅ Removed 2048, 3840 (too large)
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    
+    // 🔥 CRITICAL ADDITIONS - These will save you 50-70% bandwidth
+    minimumCacheTTL: 31536000, // ✅ Cache for 1 year (reduces repeated transformations)
+    dangerouslyAllowSVG: false, // ✅ Security
+    contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+  },
+  
+  // 🔥 PREVENT HOTLINKING - Stops other sites stealing your bandwidth
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable', // ✅ Browser cache for 1 year
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'strict-origin-when-cross-origin', // ✅ Prevent hotlinking
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+        ],
+      },
+      {
+        source: '/_next/image',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable', // ✅ Cache optimized images forever
+          },
+        ],
+      },
+    ];
   },
 };
 

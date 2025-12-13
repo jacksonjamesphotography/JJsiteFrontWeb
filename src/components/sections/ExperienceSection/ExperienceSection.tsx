@@ -17,7 +17,10 @@ function ExperienceSection() {
                 src={EXPERIENCE_LEFT_IMAGE}
                 alt="Candid Wedding Photography in Kerala - Jackson James Wedding Photographer"
                 fill
+                quality={85}
+                loading="lazy"
                 className="object-cover"
+                sizes="(max-width: 1024px) 0vw, 33vw"
               />
             </div>
           </div>
@@ -99,7 +102,10 @@ function ExperienceSection() {
                 src={EXPERIENCE_RIGHT_IMAGE}
                 alt="Destination Wedding Photography India - Professional Wedding Photographer"
                 fill
+                quality={85}
+                loading="lazy"
                 className="object-cover"
+                sizes="(max-width: 1024px) 0vw, 33vw"
               />
             </div>
           </div>

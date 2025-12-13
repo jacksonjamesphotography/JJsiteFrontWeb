@@ -89,8 +89,11 @@ function DedicationSection() {
                 src={DEDICATION_IMAGE}
                 alt="Wedding Photography"
                 fill
+                quality={85}
+                loading="lazy"
                 className="object-cover shadow-xl rounded-none"
                 style={{ objectPosition: "center", borderRadius: "0" }}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 120vw, 600px"
               />
             </div>
           </div>

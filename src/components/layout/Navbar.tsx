@@ -15,9 +15,10 @@ export default function Navbar() {
   // Pages where we don't want blur effect
   const pagesWithoutBlur = ["/about", "/films", "/stories", "/get-in-touch"];
   const shouldDisableBlur = pagesWithoutBlur.includes(pathname);
-  
+
   // Story gallery pages (individual story pages) should have solid background
-  const isStoryGalleryPage = pathname?.startsWith("/stories/") && pathname !== "/stories";
+  const isStoryGalleryPage =
+    pathname?.startsWith("/stories/") && pathname !== "/stories";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,6 +65,8 @@ export default function Navbar() {
                 src="/images/logo/logo.png"
                 alt="Logo"
                 fill
+                priority
+                loading="eager"
                 className={`object-contain transition-opacity duration-500 ease-in-out ${
                   isScrolled || isStoryGalleryPage ? "opacity-0" : "opacity-100"
                 }`}
@@ -73,6 +76,8 @@ export default function Navbar() {
                 src="/images/logo/logoblack.png"
                 alt="Logo"
                 fill
+                priority
+                loading="eager"
                 className={`object-contain transition-opacity duration-500 ease-in-out ${
                   isScrolled || isStoryGalleryPage ? "opacity-100" : "opacity-0"
                 }`}
@@ -101,7 +106,9 @@ export default function Navbar() {
                     {link.name}
                     <span
                       className={`absolute left-0 -bottom-1 w-full h-[1px] transform origin-left transition-all duration-500 ease-in-out ${
-                        isScrolled || isStoryGalleryPage ? "bg-[#2E2E2E]" : "bg-white"
+                        isScrolled || isStoryGalleryPage
+                          ? "bg-[#2E2E2E]"
+                          : "bg-white"
                       } ${
                         isActive
                           ? "scale-x-100"

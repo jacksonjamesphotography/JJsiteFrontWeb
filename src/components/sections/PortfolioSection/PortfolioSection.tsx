@@ -99,7 +99,10 @@ function PortfolioSection() {
                       src={image}
                       alt={`Portfolio ${currentIndex + index + 1}`}
                       fill
+                      quality={85}
+                      loading="lazy"
                       className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 33vw"
                     />
                   </div>
                 )

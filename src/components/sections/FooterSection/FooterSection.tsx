@@ -44,9 +44,11 @@ function FooterSection() {
               src={image}
               alt="Footer Background"
               fill
+              quality={85}
               className="object-cover"
-              priority={index < 2}
-              loading={index < 2 ? "eager" : "lazy"}
+              priority={index === 0}
+              loading={index === 0 ? "eager" : "lazy"}
+              sizes="100vw"
             />
           </div>
         ))}
@@ -125,6 +127,8 @@ function FooterSection() {
               alt="Logo"
               width={160}
               height={160}
+              quality={90}
+              loading="lazy"
               className="object-contain"
             />
           </div>

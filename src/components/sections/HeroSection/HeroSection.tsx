@@ -33,10 +33,11 @@ function HeroSection() {
             src={image}
             alt="Hero Background"
             fill
-            priority={index < 3}
-            loading={index < 3 ? "eager" : "lazy"}
+            priority={index === 0} // Only first image gets priority
+            loading={index === 0 ? "eager" : "lazy"}
+            quality={90} // High quality for hero images
             className="object-cover"
-            sizes="100vw"
+            sizes="100vw" // Full viewport width
           />
         </div>
       ))}
