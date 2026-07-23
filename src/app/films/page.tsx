@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import FilmsHeader from "@/components/pages/FilmsPage/FilmsHeader";
 import AboutFilms from "@/components/pages/FilmsPage/AboutFilms";
-import YoutubeVideos from "@/components/pages/FilmsPage/YoutubeVideos";
+import FilmsVideos from "@/components/pages/FilmsPage/FilmsVideos";
 import FooterSection from "@/components/sections/FooterSection/FooterSection";
 import { getFilms } from "@/lib/sanity/queries";
 
@@ -41,7 +41,7 @@ async function FilmsPage() {
     <main>
       <FilmsHeader />
       <AboutFilms />
-      <YoutubeVideos films={films} />
+      <FilmsVideos films={films} />
       <FooterSection />
     </main>
   );

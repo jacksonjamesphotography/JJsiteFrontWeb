@@ -48,21 +48,21 @@ export async function getStoryBySlug(slug: string): Promise<Story | null> {
 
 export interface Film {
   _id: string;
-  coupleName: string;
+  title: string;
   slug: {
     current: string;
   };
-  videos?: Array<{
-    url: string;
-  }>;
+  videoUrl?: string | null;
+  videoMimeType?: string | null;
   thumbnail?: any;
 }
 
-const filmsQuery = `*[_type == "film"] | order(coupleName asc) {
+const filmsQuery = `*[_type == "film"] | order(title asc) {
   _id,
-  coupleName,
+  title,
   slug,
-  videos,
+  "videoUrl": video.asset->url,
+  "videoMimeType": video.asset->mimeType,
   thumbnail
 }`;
 
@@ -97,6 +97,26 @@ const testimonialsQuery = `*[_type == "testimonial"] | order(order asc, couple a
 export async function getTestimonials(): Promise<Testimonial[]> {
   return await client.fetch<Testimonial[]>(
     testimonialsQuery,
+    {},
+    {
+      next: { revalidate: 60 },
+    }
+  );
+}
+
+export interface HomePage {
+  ctaStoriesImage?: any;
+  ctaFilmsImage?: any;
+}
+
+const homeQuery = `*[_type == "home" && _id == "home"][0] {
+  ctaStoriesImage,
+  ctaFilmsImage
+}`;
+
+export async function getHomePage(): Promise<HomePage | null> {
+  return await client.fetch<HomePage | null>(
+    homeQuery,
     {},
     {
       next: { revalidate: 60 },

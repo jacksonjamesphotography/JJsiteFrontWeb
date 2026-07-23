@@ -6,8 +6,8 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'coupleName',
-      title: 'Couple Name',
+      name: 'title',
+      title: 'Title',
       type: 'string',
       validation: (Rule: Rule) => Rule.required(),
     },
@@ -16,27 +16,46 @@ export default {
       title: 'Slug',
       type: 'slug',
       options: {
-        source: 'coupleName',
+        source: 'title',
         maxLength: 100,
       },
       validation: (Rule: Rule) => Rule.required(),
     },
     {
-      name: 'videos',
-      title: 'YouTube Videos',
-      type: 'array',
-      of: [
-        {
-          type: 'object',
-          fields: [{name: 'url', title: 'YouTube URL', type: 'url'}],
-        },
-      ],
+      name: 'video',
+      title: 'Video',
+      type: 'file',
+      options: {
+        accept: 'video/*',
+      },
+      validation: (Rule: Rule) => Rule.required(),
     },
     {
       name: 'thumbnail',
       title: 'Thumbnail (Optional)',
       type: 'image',
       options: {hotspot: true},
+    },
+    // Hidden stub: Studio persists a sort on coupleName remotely.
+    // Without this field the Films list crashes. Safe to leave forever.
+    {
+      name: 'coupleName',
+      type: 'string',
+      hidden: true,
+      readOnly: true,
+    },
+  ],
+  preview: {
+    select: {
+      title: 'title',
+      media: 'thumbnail',
+    },
+  },
+  orderings: [
+    {
+      title: 'Title',
+      name: 'titleAsc',
+      by: [{field: 'title', direction: 'asc'}],
     },
   ],
 }

@@ -45,6 +45,15 @@ export async function POST(request: NextRequest) {
       });
     }
 
+    if (_type === "home") {
+      revalidatePath("/");
+      return NextResponse.json({
+        revalidated: true,
+        paths: ["/"],
+        now: Date.now(),
+      });
+    }
+
     // If no specific type, revalidate all CMS pages
     revalidatePath("/");
     revalidatePath("/stories");

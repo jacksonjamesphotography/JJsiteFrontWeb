@@ -314,58 +314,6 @@ export const FAQS = [
 // About Films Section Video
 export const ABOUT_FILMS_VIDEO = "/videos/portrait.mp4";
 
-// YouTube Videos for Films Page
-export const YOUTUBE_VIDEOS = [
-  {
-    id: 1,
-    videoId: "_HGPtqIv5d0",
-    startTime: 137,
-    coupleName: "Aditya & Namya",
-  },
-  {
-    id: 2,
-    videoId: "PWkGauMnjoM",
-    startTime: 2,
-    coupleName: "Melissa & Tanvir",
-  },
-  {
-    id: 3,
-    videoId: "1-hqTKFcuuk",
-    startTime: 47,
-    coupleName: "Priyantha & Julian",
-  },
-  {
-    id: 4,
-    videoId: "ZBhziXijGdQ",
-    startTime: 73,
-    coupleName: "Konika & Shubham",
-  },
-  {
-    id: 5,
-    videoId: "ejkS3eaI2fk",
-    startTime: 132,
-    coupleName: "Amy & Lars",
-  },
-  {
-    id: 6,
-    videoId: "XVQLKTJQZ5c",
-    startTime: 4,
-    coupleName: "Anisha & Emil",
-  },
-  {
-    id: 7,
-    videoId: "Ff_OqIeIVuE",
-    startTime: 0,
-    coupleName: "Charn & Pranav",
-  },
-  {
-    id: 8,
-    videoId: "EYw13Y73iy4",
-    startTime: 86,
-    coupleName: "Ravneet & Sanju",
-  },
-] as const;
-
 // Stories Page - Couple Images
 export const STORIES_COUPLES = [
   "Priyantha&Julian",

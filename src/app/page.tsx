@@ -12,7 +12,8 @@ import TestimonialsSection from "@/components/sections/TestimonialsSection/Testi
 import DedicationSection from "@/components/sections/DedicationSection/DedicationSection";
 import FooterSection from "@/components/sections/FooterSection/FooterSection";
 import StructuredData from "@/components/seo/StructuredData";
-import { getTestimonials } from "@/lib/sanity/queries";
+import { getTestimonials, getHomePage } from "@/lib/sanity/queries";
+import { getSanityImageUrl } from "@/lib/sanity.image";
 
 export const metadata: Metadata = {
   title: "Jackson James Wedding Photography",
@@ -87,7 +88,17 @@ export const metadata: Metadata = {
 export const revalidate = 60;
 
 async function Home() {
-  const testimonials = await getTestimonials();
+  const [testimonials, home] = await Promise.all([
+    getTestimonials(),
+    getHomePage(),
+  ]);
+
+  const storiesImage = home?.ctaStoriesImage
+    ? getSanityImageUrl(home.ctaStoriesImage, 1600)
+    : undefined;
+  const filmsImage = home?.ctaFilmsImage
+    ? getSanityImageUrl(home.ctaFilmsImage, 1600)
+    : undefined;
 
   return (
     <>
@@ -97,7 +108,7 @@ async function Home() {
         <ExperienceSection />
         <ExploreFilmsSection />
         <OurMission />
-        <CTASection />
+        <CTASection storiesImage={storiesImage} filmsImage={filmsImage} />
         <FeaturedSection />
         <PortfolioSection />
         <AboutJackson />

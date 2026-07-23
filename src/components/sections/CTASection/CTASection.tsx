@@ -4,7 +4,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { CTA_STORIES_IMAGE, CTA_FILMS_IMAGE } from "@/lib/constants";
 
-function CTASection() {
+interface CTASectionProps {
+  storiesImage?: string;
+  filmsImage?: string;
+}
+
+function CTASection({ storiesImage, filmsImage }: CTASectionProps) {
+  const storiesSrc = storiesImage || CTA_STORIES_IMAGE;
+  const filmsSrc = filmsImage || CTA_FILMS_IMAGE;
+
   return (
     <section className="relative w-full h-[60vh] md:h-[70vh] flex">
       {/* Left Half - Stories */}
@@ -13,7 +21,7 @@ function CTASection() {
         className="relative w-1/2 h-full group overflow-hidden"
       >
         <Image
-          src={CTA_STORIES_IMAGE}
+          src={storiesSrc}
           alt="Stories"
           fill
           quality={85}
@@ -65,7 +73,7 @@ function CTASection() {
         className="relative w-1/2 h-full group overflow-hidden"
       >
         <Image
-          src={CTA_FILMS_IMAGE}
+          src={filmsSrc}
           alt="Films"
           fill
           quality={85}

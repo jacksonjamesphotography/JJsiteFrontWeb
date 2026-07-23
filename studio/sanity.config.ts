@@ -16,7 +16,29 @@ export default defineConfig({
   basePath: '/studio',
 
   plugins: [
-    structureTool(),
+    structureTool({
+      structure: (S) =>
+        S.list()
+          .title('Content')
+          .items([
+            S.listItem()
+              .title('Home')
+              .id('home')
+              .child(
+                S.document().schemaType('home').documentId('home').title('Home')
+              ),
+            S.documentTypeListItem('story').title('Stories'),
+            S.listItem()
+              .title('Films')
+              .schemaType('film')
+              .child(
+                S.documentTypeList('film')
+                  .title('Films')
+                  .defaultOrdering([{field: 'title', direction: 'asc'}])
+              ),
+            S.documentTypeListItem('testimonial').title('Testimonials'),
+          ]),
+    }),
     media({
       // Enable multiple image selection
       creditLine: {
