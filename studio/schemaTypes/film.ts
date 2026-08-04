@@ -22,13 +22,15 @@ export default {
       validation: (Rule: Rule) => Rule.required(),
     },
     {
-      name: 'video',
-      title: 'Video',
-      type: 'file',
-      options: {
-        accept: 'video/*',
-      },
-      validation: (Rule: Rule) => Rule.required(),
+      name: 'videoUrl',
+      title: 'Dropbox Video URL',
+      type: 'url',
+      description:
+        'Paste a Dropbox share link. Prefer ending with raw=1 (or dl=1). Example: https://www.dropbox.com/scl/fi/.../film.mp4?...&raw=1',
+      validation: (Rule: Rule) =>
+        Rule.required().uri({
+          scheme: ['http', 'https'],
+        }),
     },
     {
       name: 'thumbnail',

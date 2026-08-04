@@ -94,10 +94,10 @@ async function Home() {
   ]);
 
   const storiesImage = home?.ctaStoriesImage
-    ? getSanityImageUrl(home.ctaStoriesImage, 1600)
+    ? getSanityImageUrl(home.ctaStoriesImage, 1200)
     : undefined;
   const filmsImage = home?.ctaFilmsImage
-    ? getSanityImageUrl(home.ctaFilmsImage, 1600)
+    ? getSanityImageUrl(home.ctaFilmsImage, 1200)
     : undefined;
 
   return (

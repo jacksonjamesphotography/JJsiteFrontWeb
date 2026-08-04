@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import { HERO_IMAGES } from "@/lib/constants";
 
@@ -9,38 +9,45 @@ function HeroSection() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => {
-        const nextIndex = (prevIndex + 1) % HERO_IMAGES.length;
-        console.log(`Switching from image ${prevIndex} to ${nextIndex}`);
-        return nextIndex;
-      });
-    }, 4000); // Change image every 4 seconds
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % HERO_IMAGES.length);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);
 
+  // Only mount current + next so we don't fetch all hero images at once
+  const visibleIndices = useMemo(() => {
+    const nextIndex = (currentImageIndex + 1) % HERO_IMAGES.length;
+    return new Set([currentImageIndex, nextIndex]);
+  }, [currentImageIndex]);
+
   return (
     <div className="relative h-screen w-full overflow-hidden">
       {/* Background Images with fade transition */}
-      {HERO_IMAGES.map((image, index) => (
-        <div
-          key={image}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentImageIndex ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          <Image
-            src={image}
-            alt="Hero Background"
-            fill
-            priority={index === 0} // Only first image gets priority
-            loading={index === 0 ? "eager" : "lazy"}
-            quality={90} // High quality for hero images
-            className="object-cover"
-            sizes="100vw" // Full viewport width
-          />
-        </div>
-      ))}
+      {HERO_IMAGES.map((image, index) => {
+        if (!visibleIndices.has(index)) return null;
+
+        return (
+          <div
+            key={image}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              index === currentImageIndex ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <Image
+              src={image}
+              alt="Hero Background"
+              fill
+              priority={index === 0}
+              fetchPriority={index === 0 ? "high" : "auto"}
+              loading={index === 0 ? "eager" : "lazy"}
+              quality={80}
+              className="object-cover"
+              sizes="100vw"
+            />
+          </div>
+        );
+      })}
 
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/40" />

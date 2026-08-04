@@ -28,9 +28,17 @@ function TestimonialsSection({ testimonials }: TestimonialsSectionProps) {
 
   const current = testimonials[currentIndex];
 
-  // Generate optimized image URLs from Sanity
-  const image1Url = urlFor(current.image1).width(800).quality(85).url();
-  const image2Url = urlFor(current.image2).width(800).quality(85).url();
+  // Generate optimized image URLs from Sanity (display size ~256px)
+  const image1Url = urlFor(current.image1)
+    .width(512)
+    .quality(80)
+    .auto("format")
+    .url();
+  const image2Url = urlFor(current.image2)
+    .width(512)
+    .quality(80)
+    .auto("format")
+    .url();
 
   return (
     <section

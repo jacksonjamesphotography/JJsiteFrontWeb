@@ -59,8 +59,11 @@ function ScrollImageSection() {
             <Image
               src={image}
               alt={`Scroll image ${index + 1}`}
-              width={1200}
-              height={700}
+              width={800}
+              height={1000}
+              quality={75}
+              loading="lazy"
+              sizes="(max-width: 640px) 80vw, (max-width: 768px) 350px, 400px"
               className="h-full w-auto object-cover"
               style={{
                 objectFit: "cover",

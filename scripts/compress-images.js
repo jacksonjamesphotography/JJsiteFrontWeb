@@ -20,13 +20,13 @@ const path = require("path");
 
 // Configuration
 const CONFIG = {
-  quality: 85, // High quality for photography
+  quality: 82, // High quality for photography, smaller files
+  maxWidth: 1920, // Enough for full-bleed retina displays
   progressive: true, // Progressive JPEG loading
   optimizeScans: true,
   chromaSubsampling: "4:4:4", // Best color quality
   trellisQuantisation: true,
   overshootDeringing: true,
-  optimizeScans: true,
 };
 
 // Directories to process (or pass as command line argument)
@@ -102,8 +102,8 @@ async function compressImage(filePath) {
     }
 
     // Resize if too large (keep aspect ratio)
-    if (metadata.width && metadata.width > 2400) {
-      sharpInstance = sharpInstance.resize(2400, null, {
+    if (metadata.width && metadata.width > CONFIG.maxWidth) {
+      sharpInstance = sharpInstance.resize(CONFIG.maxWidth, null, {
         fit: "inside",
         withoutEnlargement: true,
       });

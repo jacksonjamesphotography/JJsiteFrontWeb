@@ -32,26 +32,30 @@ function FooterSection() {
     <>
       {/* First Section - CTA with Background */}
       <section className="relative w-full h-[500px] md:h-[600px] lg:h-[700px] overflow-hidden">
-        {/* Background Images with fade transition */}
-        {FOOTER_BG_IMAGES.map((image, index) => (
-          <div
-            key={image}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentImageIndex ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <Image
-              src={image}
-              alt="Footer Background"
-              fill
-              quality={85}
-              className="object-cover"
-              priority={index === 0}
-              loading={index === 0 ? "eager" : "lazy"}
-              sizes="100vw"
-            />
-          </div>
-        ))}
+        {/* Background Images with fade transition — only current + next */}
+        {FOOTER_BG_IMAGES.map((image, index) => {
+          const nextIndex = (currentImageIndex + 1) % FOOTER_BG_IMAGES.length;
+          if (index !== currentImageIndex && index !== nextIndex) return null;
+
+          return (
+            <div
+              key={image}
+              className={`absolute inset-0 transition-opacity duration-1000 ${
+                index === currentImageIndex ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              <Image
+                src={image}
+                alt="Footer Background"
+                fill
+                quality={75}
+                className="object-cover"
+                loading="lazy"
+                sizes="100vw"
+              />
+            </div>
+          );
+        })}
 
         {/* Overlay */}
         <div

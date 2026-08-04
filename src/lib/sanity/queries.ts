@@ -53,7 +53,6 @@ export interface Film {
     current: string;
   };
   videoUrl?: string | null;
-  videoMimeType?: string | null;
   thumbnail?: any;
 }
 
@@ -61,8 +60,7 @@ const filmsQuery = `*[_type == "film"] | order(title asc) {
   _id,
   title,
   slug,
-  "videoUrl": video.asset->url,
-  "videoMimeType": video.asset->mimeType,
+  videoUrl,
   thumbnail
 }`;
 

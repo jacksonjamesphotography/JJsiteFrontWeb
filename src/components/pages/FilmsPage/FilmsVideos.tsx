@@ -4,6 +4,39 @@ interface FilmsVideosProps {
   films: Film[];
 }
 
+/**
+ * Convert Dropbox share links into direct streamable URLs.
+ * - dl=0 / dl=1 → raw=1
+ * - dropbox.com → dl.dropboxusercontent.com when needed
+ */
+function toDirectVideoUrl(url: string): string {
+  if (!url) return url;
+
+  try {
+    const parsed = new URL(url);
+
+    if (
+      parsed.hostname.includes("dropbox.com") ||
+      parsed.hostname.includes("dropboxusercontent.com")
+    ) {
+      // Prefer raw=1 for inline video playback in <video>
+      parsed.searchParams.delete("dl");
+      parsed.searchParams.set("raw", "1");
+
+      // Some share links work more reliably on the content host
+      if (parsed.hostname === "www.dropbox.com") {
+        parsed.hostname = "dl.dropboxusercontent.com";
+      }
+
+      return parsed.toString();
+    }
+  } catch {
+    // If URL parsing fails, return as-is
+  }
+
+  return url;
+}
+
 function FilmsVideos({ films }: FilmsVideosProps) {
   const videos = films
     .map((film) => {
@@ -11,15 +44,13 @@ function FilmsVideos({ films }: FilmsVideosProps) {
 
       return {
         id: film._id,
-        videoUrl: film.videoUrl,
-        videoMimeType: film.videoMimeType || "video/mp4",
+        videoUrl: toDirectVideoUrl(film.videoUrl),
         title: film.title,
       };
     })
     .filter((video) => video !== null) as Array<{
     id: string;
     videoUrl: string;
-    videoMimeType: string;
     title: string;
   }>;
 
@@ -68,7 +99,7 @@ function FilmsVideos({ films }: FilmsVideosProps) {
                   style={{ border: "none" }}
                   title={video.title}
                 >
-                  <source src={video.videoUrl} type={video.videoMimeType} />
+                  <source src={video.videoUrl} type="video/mp4" />
                 </video>
               </div>
 
