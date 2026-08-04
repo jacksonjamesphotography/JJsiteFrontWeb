@@ -99,6 +99,13 @@ async function Home() {
   const filmsImage = home?.ctaFilmsImage
     ? getSanityImageUrl(home.ctaFilmsImage, 1200)
     : undefined;
+  const portfolioFromSanity =
+    home?.portfolioImages
+      ?.map((image) => getSanityImageUrl(image, 900))
+      .filter(Boolean) ?? [];
+  // Only replace defaults when owner uploads a full set of 6
+  const portfolioImages =
+    portfolioFromSanity.length === 6 ? portfolioFromSanity : undefined;
 
   return (
     <>
@@ -110,7 +117,7 @@ async function Home() {
         <OurMission />
         <CTASection storiesImage={storiesImage} filmsImage={filmsImage} />
         <FeaturedSection />
-        <PortfolioSection />
+        <PortfolioSection images={portfolioImages} />
         <AboutJackson />
         <ScrollImageSection />
         <TestimonialsSection testimonials={testimonials} />

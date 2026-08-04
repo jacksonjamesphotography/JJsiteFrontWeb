@@ -105,11 +105,13 @@ export async function getTestimonials(): Promise<Testimonial[]> {
 export interface HomePage {
   ctaStoriesImage?: any;
   ctaFilmsImage?: any;
+  portfolioImages?: any[];
 }
 
 const homeQuery = `*[_type == "home" && _id == "home"][0] {
   ctaStoriesImage,
-  ctaFilmsImage
+  ctaFilmsImage,
+  portfolioImages
 }`;
 
 export async function getHomePage(): Promise<HomePage | null> {

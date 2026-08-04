@@ -6,17 +6,27 @@ import { useState, useRef } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { PORTFOLIO_IMAGES } from "@/lib/constants";
 
-function PortfolioSection() {
+interface PortfolioSectionProps {
+  images?: string[];
+}
+
+function PortfolioSection({ images }: PortfolioSectionProps) {
+  // Fall back to the built-in 6 images unless Sanity provides a full set
+  const portfolioImages =
+    images && images.length === 6 ? images : PORTFOLIO_IMAGES;
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const maxStartIndex = Math.max(0, portfolioImages.length - 3);
 
   const scrollToNext = () => {
     if (isTransitioning) return;
 
     setIsTransitioning(true);
-    if (currentIndex < PORTFOLIO_IMAGES.length - 3) {
-      setCurrentIndex(currentIndex + 3);
+    if (currentIndex < maxStartIndex) {
+      setCurrentIndex(Math.min(currentIndex + 3, maxStartIndex));
     } else {
       // Cycle back to the beginning
       setCurrentIndex(0);
@@ -29,10 +39,10 @@ function PortfolioSection() {
 
     setIsTransitioning(true);
     if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 3);
+      setCurrentIndex(Math.max(currentIndex - 3, 0));
     } else {
       // Cycle to the end
-      setCurrentIndex(PORTFOLIO_IMAGES.length - 3);
+      setCurrentIndex(maxStartIndex);
     }
     setTimeout(() => setIsTransitioning(false), 200);
   };
@@ -87,10 +97,10 @@ function PortfolioSection() {
               ref={scrollContainerRef}
               className="flex-1 flex gap-2 md:gap-4 overflow-hidden"
             >
-              {PORTFOLIO_IMAGES.slice(currentIndex, currentIndex + 3).map(
+              {portfolioImages.slice(currentIndex, currentIndex + 3).map(
                 (image, index) => (
                   <div
-                    key={currentIndex + index}
+                    key={`${image}-${currentIndex + index}`}
                     className={`flex-1 w-full h-[300px] md:h-[400px] lg:h-[500px] relative overflow-hidden shadow-lg transition-opacity duration-200 ease-in ${
                       isTransitioning ? "opacity-0" : "opacity-100"
                     }`}
