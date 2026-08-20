@@ -402,9 +402,9 @@ function FooterSection() {
                 letterSpacing: "0.15em",
               }}
             >
-              Website Designed by{" "}
+              Website by{" "}
               <a
-                href="https://instagram.com/sshashank_singh_"
+                href="https://instagram.com/bymotifstudios"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white hover:text-white hover:underline transition-all duration-300"
@@ -412,7 +412,7 @@ function FooterSection() {
                   fontFamily: "var(--font-family-heading)",
                 }}
               >
-                Shashank Singh
+                byMotifStudios
               </a>
             </p>
           </div>
