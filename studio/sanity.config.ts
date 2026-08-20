@@ -37,6 +37,15 @@ export default defineConfig({
                   .defaultOrdering([{field: 'title', direction: 'asc'}])
               ),
             S.documentTypeListItem('testimonial').title('Testimonials'),
+            S.listItem()
+              .title('PDF Portfolio')
+              .id('pdfPortfolio')
+              .child(
+                S.document()
+                  .schemaType('pdfPortfolio')
+                  .documentId('pdfPortfolio')
+                  .title('PDF Portfolio')
+              ),
           ]),
     }),
     media({

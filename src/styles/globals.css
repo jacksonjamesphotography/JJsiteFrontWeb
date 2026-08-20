@@ -87,3 +87,126 @@
     transform: translateY(0);
   }
 }
+
+/* PDF Portfolio — A4 portrait sheets (screen preview = print) */
+.pdf-studio {
+  background: #c9c0b6;
+  padding: 4.5rem 1rem 3rem;
+  min-height: 100vh;
+}
+
+body:has(.pdf-studio) nav {
+  display: none !important;
+}
+
+.pdf-sheet {
+  width: 210mm;
+  height: 297mm;
+  margin: 0 auto 1.5rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 12px 40px rgba(46, 46, 46, 0.18);
+  background: #faf9f6;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.pdf-sheet-inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 14mm 16mm;
+  min-height: 0;
+}
+
+/* Mobile / narrow screen: readable type, sheet can grow */
+@media screen and (max-width: 900px) {
+  .pdf-studio {
+    padding: 4rem 0.65rem 2.5rem;
+    overflow-x: hidden;
+  }
+
+  .pdf-sheet {
+    /* Scale content up for phone reading; compensate width so no horizontal scroll */
+    --pdf-mobile-scale: 1.32;
+    width: calc(100% / var(--pdf-mobile-scale));
+    max-width: none;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    zoom: var(--pdf-mobile-scale);
+    margin-bottom: 1.75rem;
+  }
+
+  /* Fallback when zoom is unsupported */
+  @supports not (zoom: 1) {
+    .pdf-sheet {
+      width: 100%;
+      transform: scale(var(--pdf-mobile-scale));
+      transform-origin: top center;
+      margin-bottom: calc(1.75rem + 25%);
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .pdf-sheet {
+    --pdf-mobile-scale: 1.42;
+  }
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    overflow: visible !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  .pdf-print-bar,
+  .pdf-no-print,
+  nav {
+    display: none !important;
+  }
+
+  .pdf-studio {
+    background: none !important;
+    padding: 0 !important;
+    min-height: 0 !important;
+  }
+
+  .pdf-sheet {
+    width: 210mm;
+    height: 297mm;
+    min-height: 297mm;
+    margin: 0;
+    overflow: hidden;
+    box-shadow: none;
+    break-after: page;
+    page-break-after: always;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .pdf-sheet:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  img {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}

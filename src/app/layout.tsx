@@ -5,7 +5,6 @@ import "../styles/globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import ConditionalNavbar from "@/components/layout/ConditionalNavbar";
-import CookieConsent from "@/components/layout/CookieConsent";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -106,7 +105,6 @@ export default function RootLayout({
         </Script>
         <ConditionalNavbar />
         <main>{children}</main>
-        <CookieConsent />
         <SpeedInsights />
         <Analytics />
       </body>

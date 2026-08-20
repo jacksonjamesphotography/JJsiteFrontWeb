@@ -1,13 +1,13 @@
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
 
-// Import schema types directly
 import story from "../../../studio/schemaTypes/story";
 import film from "../../../studio/schemaTypes/film";
 import testimonial from "../../../studio/schemaTypes/testimonial";
 import home from "../../../studio/schemaTypes/home";
+import pdfPortfolio from "../../../studio/schemaTypes/pdfPortfolio";
 
-const schemaTypes = [home, story, film, testimonial];
+const schemaTypes = [home, story, film, testimonial, pdfPortfolio];
 
 export default defineConfig({
   name: "default",
@@ -37,6 +37,15 @@ export default defineConfig({
                   .defaultOrdering([{ field: "title", direction: "asc" }])
               ),
             S.documentTypeListItem("testimonial").title("Testimonials"),
+            S.listItem()
+              .title("PDF Portfolio")
+              .id("pdfPortfolio")
+              .child(
+                S.document()
+                  .schemaType("pdfPortfolio")
+                  .documentId("pdfPortfolio")
+                  .title("PDF Portfolio")
+              ),
           ]),
     }),
   ],

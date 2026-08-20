@@ -123,3 +123,25 @@ export async function getHomePage(): Promise<HomePage | null> {
     }
   );
 }
+
+const pdfPortfolioQuery = `*[_type == "pdfPortfolio" && _id == "pdfPortfolio"][0] {
+  cover,
+  about,
+  mission,
+  vision,
+  work,
+  lookbook,
+  services,
+  praise,
+  contact
+}`;
+
+export async function getPdfPortfolioDoc() {
+  return await client.fetch(
+    pdfPortfolioQuery,
+    {},
+    {
+      next: { revalidate: 30 },
+    }
+  );
+}

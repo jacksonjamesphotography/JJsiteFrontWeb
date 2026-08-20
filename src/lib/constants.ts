@@ -15,6 +15,7 @@ export const ROUTES = {
   STORIES: "/stories",
   FILMS: "/films",
   CONTACT: "/get-in-touch",
+  PDF_PORTFOLIO: "/pdf-portfolio",
   // BLOG: "/blog",
 } as const;
 
@@ -25,6 +26,7 @@ export const footerLinks = [
   { name: "FILMS", href: ROUTES.FILMS },
   // { name: "BLOGS", href: ROUTES.BLOG },
   { name: "GET IN TOUCH", href: ROUTES.CONTACT },
+  { name: "PORTFOLIO PDF", href: ROUTES.PDF_PORTFOLIO },
 ];
 
 // Social Media Links
