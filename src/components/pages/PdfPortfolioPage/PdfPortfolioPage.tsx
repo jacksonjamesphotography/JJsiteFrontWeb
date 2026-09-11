@@ -274,7 +274,7 @@ export default function PdfPortfolioPage({
                   fill
                   className="object-cover"
                   sizes="60mm"
-                  quality={85}
+                  quality={90}
                 />
               </div>
             ))}
@@ -289,7 +289,7 @@ export default function PdfPortfolioPage({
                   fill
                   className="object-cover"
                   sizes="45mm"
-                  quality={80}
+                  quality={90}
                 />
               </div>
             ))}
@@ -413,7 +413,7 @@ export default function PdfPortfolioPage({
                       fill
                       className="object-cover object-center"
                       sizes="114px"
-                      quality={85}
+                      quality={90}
                     />
                   </div>
                   <div className="relative w-[114px] h-[154px] overflow-hidden shadow-sm">
@@ -423,7 +423,7 @@ export default function PdfPortfolioPage({
                       fill
                       className="object-cover object-center"
                       sizes="114px"
-                      quality={85}
+                      quality={90}
                     />
                   </div>
                 </div>

@@ -21,7 +21,7 @@ function FeaturedSection() {
                 alt={`Magazine ${index + 1}`}
                 width={85}
                 height={65}
-                quality={85}
+                quality={90}
                 loading="lazy"
                 className="object-contain filter grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
               />

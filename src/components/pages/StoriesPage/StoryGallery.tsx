@@ -120,9 +120,9 @@ function StoryGallery({ story }: StoryGalleryProps) {
             >
               {galleryImages.map((image, index) => {
                 // Gallery thumbnails: optimized for masonry layout - larger size
-                const imageUrl = urlFor(image).width(1000).quality(85).url();
+                const imageUrl = urlFor(image).width(1400).quality(90).url();
                 // Full-size modal: high quality when opened
-                const fullSizeUrl = urlFor(image).width(2400).quality(90).url();
+                const fullSizeUrl = urlFor(image).width(2400).quality(92).url();
 
                 return (
                   <PhotoView key={index} src={fullSizeUrl}>
@@ -130,11 +130,11 @@ function StoryGallery({ story }: StoryGalleryProps) {
                       <Image
                         src={imageUrl}
                         alt={`${displayName} - Image ${index + 1}`}
-                        width={1000}
-                        height={1500}
+                        width={1400}
+                        height={1800}
                         className="w-full h-auto transition-transform duration-300 group-hover:scale-[1.02]"
                         sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 33vw"
-                        quality={85}
+                        quality={90}
                         style={{
                           height: "auto",
                           width: "100%",

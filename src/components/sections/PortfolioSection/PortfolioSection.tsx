@@ -109,7 +109,7 @@ function PortfolioSection({ images }: PortfolioSectionProps) {
                       src={image}
                       alt={`Portfolio ${currentIndex + index + 1}`}
                       fill
-                      quality={85}
+                      quality={90}
                       loading="lazy"
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, 33vw"

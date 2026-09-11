@@ -89,7 +89,7 @@ function DedicationSection() {
                 src={DEDICATION_IMAGE}
                 alt="Wedding Photography"
                 fill
-                quality={85}
+                quality={90}
                 loading="lazy"
                 className="object-cover shadow-xl rounded-none"
                 style={{ objectPosition: "center", borderRadius: "0" }}

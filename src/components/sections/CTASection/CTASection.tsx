@@ -24,7 +24,7 @@ function CTASection({ storiesImage, filmsImage }: CTASectionProps) {
           src={storiesSrc}
           alt="Stories"
           fill
-          quality={85}
+          quality={90}
           loading="lazy"
           className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
           sizes="50vw"
@@ -76,7 +76,7 @@ function CTASection({ storiesImage, filmsImage }: CTASectionProps) {
           src={filmsSrc}
           alt="Films"
           fill
-          quality={85}
+          quality={90}
           loading="lazy"
           className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
           sizes="50vw"

@@ -19,7 +19,7 @@ export function urlFor(source: any) {
 export function getSanityImageUrl(
   source: SanityImageSource,
   width?: number,
-  quality = 85 // High quality for photography portfolio
+  quality = 90 // High quality for photography portfolio
 ): string {
   if (!source) {
     console.warn("getSanityImageUrl: No image source provided");
