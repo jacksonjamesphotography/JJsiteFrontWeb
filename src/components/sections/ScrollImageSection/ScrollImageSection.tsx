@@ -59,16 +59,17 @@ function ScrollImageSection() {
             <Image
               src={image}
               alt={`Scroll image ${index + 1}`}
-              width={800}
-              height={1000}
-              quality={75}
-              loading="lazy"
-              sizes="(max-width: 640px) 80vw, (max-width: 768px) 350px, 400px"
+              width={1400}
+              height={1750}
+              quality={92}
+              loading={index < 4 ? "eager" : "lazy"}
+              sizes="(max-width: 640px) 85vw, (max-width: 768px) 420px, 560px"
               className="h-full w-auto object-cover"
               style={{
                 objectFit: "cover",
               }}
               draggable={false}
+              priority={index < 2}
             />
           </div>
         ))}

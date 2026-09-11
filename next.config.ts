@@ -38,13 +38,13 @@ const nextConfig: NextConfig = {
         pathname: "/images/**",
       },
     ],
-    formats: ["image/avif", "image/webp"], // ✅ AVIF first (smaller)
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920], // ✅ Removed 2048, 3840 (too large)
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    formats: ["image/avif", "image/webp"],
+    // Include retina sizes for both small cards and large scroll/hero images
+    deviceSizes: [640, 750, 828, 1080, 1200, 1600, 1920, 2048],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384, 512, 640, 750, 828],
     
-    // 🔥 CRITICAL ADDITIONS - These will save you 50-70% bandwidth
-    minimumCacheTTL: 31536000, // ✅ Cache for 1 year (reduces repeated transformations)
-    dangerouslyAllowSVG: false, // ✅ Security
+    minimumCacheTTL: 31536000,
+    dangerouslyAllowSVG: false,
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },

@@ -152,12 +152,14 @@ function StoriesHeader() {
             <Image
               src={image}
               alt={`Scroll image ${index + 1}`}
-              width={1200}
-              height={700}
+              width={1400}
+              height={1750}
+              quality={92}
               className="h-full w-auto object-cover"
               style={{
                 objectFit: "cover",
               }}
+              sizes="(max-width: 640px) 85vw, (max-width: 768px) 420px, 560px"
               draggable={false}
               priority={index < 3}
             />

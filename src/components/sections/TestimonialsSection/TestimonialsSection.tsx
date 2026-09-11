@@ -28,15 +28,15 @@ function TestimonialsSection({ testimonials }: TestimonialsSectionProps) {
 
   const current = testimonials[currentIndex];
 
-  // Generate optimized image URLs from Sanity (display size ~256px)
+  // Request high-res sources for retina (cards display up to ~256px, need 2–3x)
   const image1Url = urlFor(current.image1)
-    .width(512)
-    .quality(80)
+    .width(1400)
+    .quality(90)
     .auto("format")
     .url();
   const image2Url = urlFor(current.image2)
-    .width(512)
-    .quality(80)
+    .width(1400)
+    .quality(90)
     .auto("format")
     .url();
 
@@ -73,10 +73,11 @@ function TestimonialsSection({ testimonials }: TestimonialsSectionProps) {
               src={image1Url}
               alt={`${current.couple} - Image 1`}
               fill
-              quality={85}
-              loading="lazy"
+              quality={92}
+              loading="eager"
+              priority
               className="object-cover"
-              sizes="(max-width: 768px) 176px, (max-width: 1024px) 224px, 256px"
+              sizes="(max-width: 768px) 176px, (max-width: 1024px) 224px, 320px"
             />
           </div>
           <div className="relative w-44 h-60 md:w-56 md:h-80 lg:w-64 lg:h-84 overflow-hidden shadow-xl">
@@ -84,10 +85,11 @@ function TestimonialsSection({ testimonials }: TestimonialsSectionProps) {
               src={image2Url}
               alt={`${current.couple} - Image 2`}
               fill
-              quality={85}
-              loading="lazy"
+              quality={92}
+              loading="eager"
+              priority
               className="object-cover"
-              sizes="(max-width: 768px) 176px, (max-width: 1024px) 224px, 256px"
+              sizes="(max-width: 768px) 176px, (max-width: 1024px) 224px, 320px"
             />
           </div>
         </div>

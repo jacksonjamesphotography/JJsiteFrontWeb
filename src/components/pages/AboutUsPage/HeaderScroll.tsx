@@ -122,12 +122,14 @@ function HeaderScroll() {
             <Image
               src={image}
               alt={`About us header ${index + 1}`}
-              width={600}
-              height={600}
+              width={1400}
+              height={1400}
+              quality={92}
               className="h-full w-auto object-cover"
               style={{
                 objectFit: "cover",
               }}
+              sizes="(max-width: 768px) 70vw, 50vh"
               draggable={false}
               priority={index < 3}
             />

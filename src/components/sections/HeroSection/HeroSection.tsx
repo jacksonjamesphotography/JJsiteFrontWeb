@@ -41,7 +41,7 @@ function HeroSection() {
               priority={index === 0}
               fetchPriority={index === 0 ? "high" : "auto"}
               loading={index === 0 ? "eager" : "lazy"}
-              quality={80}
+              quality={90}
               className="object-cover"
               sizes="100vw"
             />

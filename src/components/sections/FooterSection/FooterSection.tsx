@@ -48,7 +48,7 @@ function FooterSection() {
                 src={image}
                 alt="Footer Background"
                 fill
-                quality={75}
+                quality={90}
                 className="object-cover"
                 loading="lazy"
                 sizes="100vw"
