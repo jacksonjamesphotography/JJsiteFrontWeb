@@ -65,7 +65,7 @@ export default function StructuredData() {
       "@type": "PostalAddress",
       addressLocality: "Kochi",
       addressRegion: "Kerala",
-      postalCode: "682000",
+      postalCode: "682036",
       addressCountry: "IN",
     },
     geo: {

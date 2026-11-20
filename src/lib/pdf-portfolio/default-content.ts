@@ -130,7 +130,7 @@ export const DEFAULT_PDF_PORTFOLIO: PdfPortfolioContent = {
     addressLines: [
       "Jackson James Photography",
       "475 (1st floor), 11th Cross Road",
-      "Panampilly Nagar, Kochi-268036",
+      "Panampilly Nagar, Kochi-682036",
     ],
     phone: "+91-7012481354",
     phoneHref: "tel:+917012481354",

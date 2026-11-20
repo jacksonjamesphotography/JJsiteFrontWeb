@@ -16,7 +16,7 @@ export default function DetailsSection() {
   };
 
   const addressText =
-    "Jackson James photography, 475 (1st floor), 11th cross road, Panampilly nagar, Kochi-268036";
+    "Jackson James photography, 475 (1st floor), 11th cross road, Panampilly nagar, Kochi-682036";
   const phoneText = "+91-7012481354";
   const emailText = "mail@jacksonjames.in";
 
@@ -65,7 +65,7 @@ export default function DetailsSection() {
               >
                 Jackson James photography, <br />
                 475 (1st floor), 11th cross road, <br />
-                Panampilly nagar, Kochi-268036
+                Panampilly nagar, Kochi-682036
               </a>
               <div className="flex justify-center items-center gap-1">
                 <button
